@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "pixel-sans": ["Pixelify Sans"],
+        pixelSans: ["Pixelify Sans"],
         tiny5: ["Tiny5"],
       },
     },

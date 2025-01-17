@@ -1,11 +1,11 @@
-const gameTitleContainer = document.querySelector("#game-title");
+const entrySound = new Audio("./assets/audio/entry-sound.mp3");
+entrySound.play();
 
-const finalGameTitle = "Hide and Seek";
-let gameTitle = "";
-
-for (let index = 0; index < finalGameTitle.length; index++) {
-  setTimeout(() => {
-    gameTitle += finalGameTitle[index];
-    gameTitleContainer.textContent = gameTitle;
-  }, index * 100);
-}
+const gameTitle = document.querySelector("#game-title");
+gameTitle.addEventListener("animationend", () => {
+  for (let index = 0; index < 3; index++) {
+    setTimeout(() => {
+      gameTitle.innerText += ".";
+    }, index * 400);
+  }
+});

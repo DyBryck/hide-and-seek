@@ -4,11 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="output.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap");
+    </style>
+    <link rel="icon" type="image/x-icon" href="./assets/icon/sanglant.ico" />
     <title>Hide and Seek</title>
   </head>
   <body class="h-full">
-    <div class="flex h-full w-full items-center justify-center bg-black">
-      <h1 id="game-title" class="font-tiny5 text-8xl text-white"></h1>
+    <div
+      class="flex h-full w-full flex-col items-center justify-center bg-black"
+    >
+      <h1 id="game-title" class="font-tiny5 text-8xl text-white">
+        Hide and seek
+      </h1>
+      <button
+        id="play-button"
+        class="bg-none font-tiny5 text-7xl text-white opacity-0"
+      >
+        Play
+      </button>
     </div>
     <script src="./script.js"></script>
   </body>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
     <link rel="stylesheet" href="output.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap");
@@ -10,22 +11,62 @@
     <link rel="icon" type="image/x-icon" href="./assets/icon/sanglant.ico" />
     <title>Hide and Seek</title>
   </head>
-  <body class="h-full bg-black">
+  <body class="h-full overflow-hidden bg-black">
+    <!-- Début page de démarrage -->
     <div
       id="starting-page"
-      class="flex h-full w-full flex-col items-center justify-center bg-black"
+      class="flex h-full w-full flex-col items-center justify-center gap-y-4 bg-black font-tiny5 text-white"
     >
-      <h1 id="game-title" class="font-tiny5 text-8xl text-white">
-        Hide and seek
-      </h1>
+      <div class="flex">
+        <h1 id="game-title" class="text-9xl">Hide and seek</h1>
+        <span id="dots" class="text-9xl"></span>
+      </div>
+      <label id="pseudo-label" for="pseudo" class="text-8xl opacity-0"
+        >Entrez votre nom:</label
+      >
+      <input
+        id="pseudo"
+        type="text"
+        class="w-1/2 border-4 border-white bg-black text-center text-8xl opacity-0 outline-none"
+      />
       <button
         id="play-button"
-        class="mt-4 bg-none font-tiny5 text-7xl text-white opacity-0"
+        class="mt-4 bg-none text-7xl opacity-0 disabled:text-gray-700"
+        disabled
       >
-        Play
+        Jouer
       </button>
     </div>
-    <div id="home-page" class="h-full w-full"></div>
+    <!-- Fin page de démarrage -->
+
+    <!-- Début intro -->
+    <div id="intro-page" class="hidden h-full w-full bg-black">
+      <p>
+        La nuit tombait lentement, enveloppant la forêt d’un voile d’obscurité
+        oppressant. Un groupe de cinq amis, excités par l’idée d’un week-end
+        loin de tout, s’enfonçait sur un sentier étroit, leurs lampes torches
+        projetant des faisceaux vacillants entre les arbres imposants.
+      </p>
+      <p>
+        “Tu es sûr que c’est ici ?” demanda Anna, ses yeux balayant les ombres
+        mouvantes.
+      </p>
+      <p>
+        “Oui, c’est le spot parfait ! Personne pour nous déranger”, répondit
+        Max, le leader autoproclamé du groupe, avec un sourire confiant.
+      </p>
+      <p>
+        Ce qu’ils ne savaient pas, c’est que cette forêt n’était pas juste
+        déserte. Elle portait un surnom : la forêt des disparus. Des campeurs
+        s’y étaient aventurés, mais jamais personne n’était revenu pour raconter
+        leur histoire.
+      </p>
+    </div>
+    <!-- Fin intro -->
+    <div
+      id="home-page"
+      class="hidden h-full w-full bg-cover bg-no-repeat"
+    ></div>
     <script src="./script.js"></script>
   </body>
 </html>

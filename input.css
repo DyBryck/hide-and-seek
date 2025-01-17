@@ -7,12 +7,24 @@
     animation: scale 3s forwards;
   }
 
+  #pseudo-label {
+    animation: appear 2s 4.2s forwards;
+  }
+
+  #pseudo {
+    animation: appear 2s 5.2s forwards;
+  }
+
   #play-button {
-    animation: appear 2s 4s forwards;
+    animation: appear 2s 6.2s forwards;
   }
 
   #play-button:active {
     transform: translateX(4px) translateY(2px);
+  }
+
+  #play-button:disabled {
+    transform: inherit;
   }
 
   @keyframes scale {
@@ -55,9 +67,6 @@
   }
 
   #home-page {
-    display: none;
     background-image: url("./assets/images/backgrounds/image.png");
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 }

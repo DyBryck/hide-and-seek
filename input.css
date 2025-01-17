@@ -27,11 +27,37 @@
   }
 
   @keyframes appear {
-    from {
-      opacity: 0;
-    }
     to {
       opacity: 1;
     }
+  }
+
+  .fade-out {
+    animation: fadeOut 1s forwards;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .visible {
+    opacity: 1;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  #home-page {
+    display: none;
+    background-image: url("./assets/images/backgrounds/image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }

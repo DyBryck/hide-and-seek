@@ -7,19 +7,18 @@
     animation: scale 3s forwards;
   }
 
-  #pseudo-label {
-    animation: appear 2s 4.2s forwards;
-  }
-
-  #pseudo {
-    animation: appear 2s 5.2s forwards;
+  #pseudo-label,
+  #pseudo,
+  #gender-icons-container {
+    animation: appear 2s 5s forwards;
   }
 
   #play-button {
     animation: appear 2s 6.2s forwards;
   }
 
-  #play-button:active {
+  #play-button:active,
+  #gender-icons-container img:active {
     transform: translateX(4px) translateY(2px);
   }
 

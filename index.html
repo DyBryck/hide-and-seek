@@ -15,7 +15,7 @@
     <!-- Début page de démarrage -->
     <div
       id="starting-page"
-      class="flex h-full w-full flex-col items-center justify-center gap-y-4 bg-black font-tiny5 text-white"
+      class="flex h-full w-full flex-col items-center justify-center gap-y-5 bg-black font-tiny5 text-white"
     >
       <div class="flex">
         <h1 id="game-title" class="text-9xl">Hide and seek</h1>
@@ -29,6 +29,20 @@
         type="text"
         class="w-1/2 border-4 border-white bg-black text-center text-8xl opacity-0 outline-none"
       />
+      <div id="gender-icons-container" class="flex h-16 gap-x-8 opacity-0">
+        <img
+          id="male"
+          src="./assets/images/gender-icons/male.png"
+          alt=""
+          class="h-full cursor-pointer opacity-50"
+        />
+        <img
+          id="female"
+          src="./assets/images/gender-icons/female.png"
+          alt=""
+          class="h-full cursor-pointer opacity-50"
+        />
+      </div>
       <button
         id="play-button"
         class="mt-4 bg-none text-7xl opacity-0 disabled:text-gray-700"
@@ -40,14 +54,12 @@
     <!-- Fin page de démarrage -->
 
     <!-- Début intro -->
-    <div id="intro-page" class="hidden h-full w-full bg-black">
-      <p>
-        La nuit tombait lentement, enveloppant la forêt d’un voile d’obscurité
-        oppressant. Un groupe de cinq amis, excités par l’idée d’un week-end
-        loin de tout, s’enfonçait sur un sentier étroit, leurs lampes torches
-        projetant des faisceaux vacillants entre les arbres imposants.
-      </p>
-      <p>
+    <div
+      id="intro-page"
+      class="hidden h-full w-full flex-col items-center justify-center gap-8 bg-black text-center font-pixelSans text-4xl text-white [&>p]:w-3/5"
+    >
+      <p id="intro-text"></p>
+      <!-- <p>
         “Tu es sûr que c’est ici ?” demanda Anna, ses yeux balayant les ombres
         mouvantes.
       </p>
@@ -60,7 +72,7 @@
         déserte. Elle portait un surnom : la forêt des disparus. Des campeurs
         s’y étaient aventurés, mais jamais personne n’était revenu pour raconter
         leur histoire.
-      </p>
+      </p> -->
     </div>
     <!-- Fin intro -->
     <div

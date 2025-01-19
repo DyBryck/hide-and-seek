@@ -1,4 +1,3 @@
-document.body.style.cursor = "url('./assets/images/cursors/cursor.png'), auto";
 const entrySound = new Audio("./assets/audio/entry-sound.mp3");
 // entrySound.play();
 
@@ -77,12 +76,13 @@ const getGender = (id) => {
   }
 
   if (pseudoField.value.length >= 3 && gender) {
-    console.log(playButton);
     enablePlayButton(true);
   } else {
     enablePlayButton(false);
   }
 };
+
+const homePage = document.querySelector("#home-page");
 
 // Ajoute au bouton "Jouer" la fonction qui lance l'intro
 playButton.addEventListener("click", () => playIntro());
@@ -91,17 +91,41 @@ playButton.addEventListener("click", () => playIntro());
 const playIntro = () => {
   toggleView(startingPage, introPage);
 
-  new TypeIt("#intro-text", {
-    speed: 70, // Vitesse du texte
-    cursor: false, // Enlève le curseur
-  })
-    .type(
-      "La nuit tombait lentement, enveloppant la forêt d’un voile d’obscurité oppressant.",
-    )
-    .pause(1000)
-    .empty() // Vide le texte
-    .type(
-      "Un groupe de cinq amis, excités par l’idée d’un week-end loin de tout, s’enfonçait sur un sentier étroit, leurs lampes torches projetant des faisceaux vacillants entre les arbres imposants.",
-    )
-    .go(); // Lance la fonction
+  setTimeout(() => {
+    new TypeIt("#intro-text", {
+      speed: 70, // Vitesse du texte
+      cursor: false, // Enlève le curseur
+    })
+      .type(
+        "La nuit tombait lentement, enveloppant la forêt d’un voile d’obscurité oppressant.",
+      )
+      .pause(2000)
+      .empty() // Vide le texte
+      .type(
+        "Un groupe de cinq amis, excités par l’idée d’un week-end loin de tout, s’enfonçait sur un sentier étroit..",
+      )
+      .pause(2000)
+      .empty() // Vide le texte
+      .type(
+        "Leurs lampes torches projetant des faisceaux vacillants entre les arbres imposants.",
+      )
+      .pause(2000)
+      .exec(() => {
+        toggleView(introPage, homePage);
+        addDialogue("Tu es sûr que c'est ici?");
+      })
+      .go(); // Lance la fonction
+  }, 500);
 };
+
+const dialogue = document.querySelector("#dialogue");
+const addDialogue = (string) => {
+  new TypeIt(dialogue, {
+    speed: 70,
+    cursor: false,
+  })
+    .type(string)
+    .go();
+};
+
+const goNextDialogue = () => {};

@@ -32,8 +32,8 @@ const toggleView = (from, to) => {
   });
 };
 
+// Active / désactive le bouton "Jouer"
 const playButton = document.querySelector("#play-button");
-
 const enablePlayButton = (bool) => {
   if (bool) {
     playButton.disabled = false;
@@ -44,9 +44,8 @@ const enablePlayButton = (bool) => {
   }
 };
 
-const startingPage = document.querySelector("#starting-page");
-const introPage = document.querySelector("#intro-page");
-
+// Stock les infos du joueur
+let pseudo;
 let gender;
 
 const pseudoField = document.querySelector("#pseudo");
@@ -63,58 +62,67 @@ Array.from(genderIcons).forEach((genderIcon) => {
   genderIcon.addEventListener("click", () => getGender(genderIcon.id));
 });
 
+// Change l'opacité des images de genre (male / female)
+// pour que l'utilisateur sache ce qu'il a sélectionné
 const maleImg = document.querySelector("#male");
 const femaleImg = document.querySelector("#female");
-const getGender = (id) => {
-  gender = id;
-  if (id === "male") {
+const getGender = (genderSelected) => {
+  if (genderSelected === "male") {
+    gender = true;
     maleImg.style.opacity = "1";
     femaleImg.style.opacity = "0.5";
   } else {
+    gender = false;
     maleImg.style.opacity = "0.5";
     femaleImg.style.opacity = "1";
   }
 
-  if (pseudoField.value.length >= 3 && gender) {
+  if (pseudoField.value.length >= 3 && gender !== undefined) {
     enablePlayButton(true);
   } else {
     enablePlayButton(false);
   }
 };
 
-const homePage = document.querySelector("#home-page");
-
 // Ajoute au bouton "Jouer" la fonction qui lance l'intro
 playButton.addEventListener("click", () => playIntro());
 
-// Lance la page d'intro, affiche le texte d'intro paragraphe par paragraphe
+const dialoguePage = document.querySelector("#dialogue-page");
+const startingPage = document.querySelector("#starting-page");
+const introPage = document.querySelector("#intro-page");
 const playIntro = () => {
+  // Récupère le pseudo du joueur quand il clique sur "jouer"
+  pseudo = pseudoField.value;
+  // Passe de la starting page à la page d'intro
   toggleView(startingPage, introPage);
 
   setTimeout(() => {
     new TypeIt("#intro-text", {
-      speed: 70, // Vitesse du texte
+      speed: 10, // Vitesse du texte
       cursor: false, // Enlève le curseur
     })
       .type(
         "La nuit tombait lentement, enveloppant la forêt d’un voile d’obscurité oppressant.",
       )
-      .pause(2000)
+      // .pause(2000)
       .empty() // Vide le texte
       .type(
         "Un groupe de cinq amis, excités par l’idée d’un week-end loin de tout, s’enfonçait sur un sentier étroit..",
       )
-      .pause(2000)
+      // .pause(2000)
       .empty() // Vide le texte
       .type(
         "Leurs lampes torches projetant des faisceaux vacillants entre les arbres imposants.",
       )
-      .pause(2000)
+      // .pause(2000)
       .exec(() => {
-        toggleView(introPage, homePage);
-        addDialogue("Tu es sûr que c'est ici?");
+        // Une fois tous les textes affichés, passe de la page d'intro à la prochaine page
+        toggleView(introPage, dialoguePage);
+        setTimeout(() => {
+          addDialogue("Tu es sûr que c'est ici?");
+        }, 1000);
       })
-      .go(); // Lance la fonction
+      .go();
   }, 500);
 };
 
@@ -125,7 +133,31 @@ const addDialogue = (string) => {
     cursor: false,
   })
     .type(string)
+    .exec(() => {
+      enableNextDialogueBtn(true);
+    })
     .go();
 };
 
-const goNextDialogue = () => {};
+const nextDialogueBtn = document.querySelector("#next-dialogue-btn");
+const enableNextDialogueBtn = (bool) => {
+  if (bool) {
+    nextDialogueBtn.disabled = false;
+    nextDialogueBtn.style.opacity = "0.6";
+  } else {
+    nextDialogueBtn.disabled = true;
+    nextDialogueBtn.style.opacity = "0";
+  }
+};
+
+const nextDialogue = (text) => {
+  dialogue.innerText = "";
+  addDialogue(text);
+};
+
+let nextDialogueContent = "Exemple du prochain texte";
+const dialogueBox = document.querySelector("#dialogueBox");
+dialogueBox.addEventListener("click", () => {
+  enableNextDialogueBtn(false);
+  nextDialogue(nextDialogueContent);
+});

@@ -5,15 +5,8 @@
 @layer components {
   html {
     cursor:
-      url("./assets/images/cursors/cursor.cur") 16 16,
+      url("./assets/images/cursors/cursor.png") 16 16,
       auto;
-  }
-
-  a,
-  button {
-    cursor:
-      url("./assets/images/cursors/pointer-cursor.png") 0 0,
-      pointer;
   }
 
   #game-title {

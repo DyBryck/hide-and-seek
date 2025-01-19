@@ -1,3 +1,4 @@
+document.body.style.cursor = "url('./assets/images/cursors/cursor.png'), auto";
 const entrySound = new Audio("./assets/audio/entry-sound.mp3");
 // entrySound.play();
 
@@ -33,6 +34,17 @@ const toggleView = (from, to) => {
 };
 
 const playButton = document.querySelector("#play-button");
+
+const enablePlayButton = (bool) => {
+  if (bool) {
+    playButton.disabled = false;
+    playButton.style.opacity = "1";
+  } else {
+    playButton.disabled = true;
+    playButton.style.opacity = "0.5";
+  }
+};
+
 const startingPage = document.querySelector("#starting-page");
 const introPage = document.querySelector("#intro-page");
 
@@ -41,9 +53,9 @@ let gender;
 const pseudoField = document.querySelector("#pseudo");
 pseudoField.addEventListener("input", () => {
   if (pseudoField.value.length >= 3 && gender) {
-    playButton.disabled = false;
+    enablePlayButton(true);
   } else {
-    playButton.disabled = true;
+    enablePlayButton(false);
   }
 });
 
@@ -65,9 +77,10 @@ const getGender = (id) => {
   }
 
   if (pseudoField.value.length >= 3 && gender) {
-    playButton.disabled = false;
+    console.log(playButton);
+    enablePlayButton(true);
   } else {
-    playButton.disabled = true;
+    enablePlayButton(false);
   }
 };
 

@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 @layer components {
+  html {
+    cursor:
+      url("./assets/images/cursors/cursor.cur") 16 16,
+      auto;
+  }
+
+  a,
+  button {
+    cursor:
+      url("./assets/images/cursors/pointer-cursor.png") 0 0,
+      pointer;
+  }
+
   #game-title {
     animation: scale 3s forwards;
   }
@@ -13,16 +26,13 @@
     animation: appear 2s 5s forwards;
   }
 
-  #play-button {
-    animation: appear 2s 6.2s forwards;
-  }
-
   #play-button:active,
   #gender-icons-container img:active {
     transform: translateX(4px) translateY(2px);
   }
 
   #play-button:disabled {
+    animation: appear-button 2s 6.2s forwards;
     transform: inherit;
   }
 
@@ -40,6 +50,12 @@
   @keyframes appear {
     to {
       opacity: 1;
+    }
+  }
+
+  @keyframes appear-button {
+    to {
+      opacity: 0.5;
     }
   }
 

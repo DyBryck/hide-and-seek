@@ -27,6 +27,7 @@
       <input
         id="pseudo"
         type="text"
+        autocomplete="off"
         class="w-1/2 border-4 border-white bg-black text-center text-8xl opacity-0 outline-none"
       />
       <div id="gender-icons-container" class="flex h-16 gap-x-8 opacity-0">
@@ -34,20 +35,16 @@
           id="male"
           src="./assets/images/gender-icons/male.png"
           alt=""
-          class="h-full cursor-pointer opacity-50"
+          class="clickable h-full cursor-pointer opacity-50"
         />
         <img
           id="female"
           src="./assets/images/gender-icons/female.png"
           alt=""
-          class="h-full cursor-pointer opacity-50"
+          class="clickable h-full cursor-pointer opacity-50"
         />
       </div>
-      <button
-        id="play-button"
-        class="mt-4 bg-none text-7xl opacity-0 disabled:text-gray-700"
-        disabled
-      >
+      <button id="play-button" class="mt-4 bg-none text-7xl opacity-0" disabled>
         Jouer
       </button>
     </div>

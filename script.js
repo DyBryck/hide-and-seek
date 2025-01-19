@@ -85,10 +85,21 @@ const playIntro = () => {
     .type(
       "La nuit tombait lentement, enveloppant la forêt d’un voile d’obscurité oppressant.",
     )
-    .pause(1000)
+    .pause(1500)
     .empty() // Vide le texte
     .type(
-      "Un groupe de cinq amis, excités par l’idée d’un week-end loin de tout, s’enfonçait sur un sentier étroit, leurs lampes torches projetant des faisceaux vacillants entre les arbres imposants.",
+      "Un groupe de cinq amis, excités par l’idée d’un week-end loin de tout, s’enfonçait sur un sentier étroit..",
+    )
+    .pause(1500)
+    .empty() // Vide le texte
+    .type(
+      "Leurs lampes torches projetant des faisceaux vacillants entre les arbres imposants.",
     )
     .go(); // Lance la fonction
 };
+
+const divTexte = document.getElementById("divTexte").style.display("none");
+
+function dialog(tab) {
+  divTexte.style.display("flex");
+}

@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/icon/sanglant.ico" />
     <title>Hide and Seek</title>
   </head>
-  <body class="h-full overflow-hidden bg-black">
+  <body class="h-full bg-black">
     <!-- Début page de démarrage -->
     <div
       id="starting-page"
@@ -43,6 +43,7 @@
           class="h-full cursor-pointer opacity-50"
         />
       </div>
+
       <button
         id="play-button"
         class="mt-4 bg-none text-7xl opacity-0 disabled:text-gray-700"
@@ -74,11 +75,30 @@
         leur histoire.
       </p> -->
     </div>
+    <div id="divDialogue" class="flex h-full w-full flex-col">
+      <div id="character" class="flex h-3/4 w-full flex-row bg-white">
+        <div id="divLeftCharacter" class="h-full w-1/2"></div>
+        <div id="divRightCharacter" class="h-full w-1/2"></div>
+      </div>
+      <div id="dialogueBox" class="w[300px] relative h-[200px]">
+        <div
+          haut
+          class="before:w[8px] absolute h-[8px] w-full bg-black before:absolute before:h-[8px] before:bg-black before:content-[''] after:absolute after:h-[8px] after:bg-black after:content-['']"
+        ></div>
+        <div droite class="absolute bg-black"></div>
+        <div
+          bas
+          class="before:w[8px] absolute h-[8px] w-full bg-black before:absolute before:h-[8px] before:bg-black before:content-[''] after:absolute after:h-[8px] after:bg-black after:content-['']"
+        ></div>
+        <div gauche class="absolute bg-black"></div>
+      </div>
+    </div>
     <!-- Fin intro -->
     <div
       id="home-page"
       class="hidden h-full w-full bg-cover bg-no-repeat"
     ></div>
+
     <script src="./script.js"></script>
   </body>
 </html>

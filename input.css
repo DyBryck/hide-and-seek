@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  #game-title {
+    animation: scale 3s forwards;
+  }
+
+  #pseudo-label,
+  #pseudo,
+  #gender-icons-container {
+    animation: appear 2s 5s forwards;
+  }
+
+  #play-button:active,
+  #gender-icons-container img:active {
+    transform: translateX(4px) translateY(2px);
+  }
+
+  #play-button:disabled {
+    animation: appear-button 2s 6.2s forwards;
+    transform: inherit;
+  }
+
+  @keyframes scale {
+    from {
+      opacity: 0;
+      transform: scale(0.2);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes appear {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes appear-button {
+    to {
+      opacity: 0.5;
+    }
+  }
+
+  .fade-out {
+    animation: fadeOut 1s forwards;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .visible {
+    opacity: 1;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  #characters-container img {
+    height: 300px;
+  }
+
+  :root {
+    --line-width: 8px;
+    --line-color: rgba(255, 255, 255, 1);
+  }
+
+  .name-box {
+    height: 40px;
+    width: 200px;
+    position: relative;
+  }
+
+  .box {
+    height: 200px;
+    width: 300px;
+    position: relative;
+  }
+
+  .box__line {
+    position: absolute;
+    background: var(--line-color);
+  }
+
+  .box__line--top,
+  .box__line--bottom {
+    height: var(--line-width);
+    width: 100%;
+  }
+
+  .box__line--top::before,
+  .box__line--top::after,
+  .box__line--bottom::before,
+  .box__line--bottom::after {
+    content: "";
+    position: absolute;
+    width: var(--line-width);
+    height: var(--line-width);
+    background: var(--line-color);
+  }
+
+  .box__line--top {
+    top: calc(-1 * var(--line-width));
+  }
+
+  .box__line--top::before {
+    left: 0;
+    bottom: calc(-1 * var(--line-width));
+  }
+
+  .box__line--top::after {
+    right: 0;
+    bottom: calc(-1 * var(--line-width));
+  }
+
+  .box__line--bottom {
+    bottom: calc(-1 * var(--line-width));
+  }
+
+  .box__line--bottom::before {
+    left: 0;
+    top: calc(-1 * var(--line-width));
+  }
+
+  .box__line--bottom::after {
+    right: 0;
+    top: calc(-1 * var(--line-width));
+  }
+
+  .box__line--left,
+  .box__line--right {
+    width: var(--line-width);
+    height: 100%;
+  }
+
+  .box__line--left {
+    left: calc(-1 * var(--line-width));
+  }
+
+  .box__line--right {
+    right: calc(-1 * var(--line-width));
+  }
+
+  .inactive-character {
+    filter: grayscale(40%);
+  }
+
+  @keyframes animateBackground {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-background {
+    animation: animateBackground 1s;
+  }
+}

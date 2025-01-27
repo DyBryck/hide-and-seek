@@ -1,0 +1,59 @@
+{
+  "eliott": {
+    "name": "Eliott",
+    "annoyed": "./assets/characters/eliott/annoyed.png",
+    "bashful": "./assets/characters/eliott/bashful.png",
+    "blush": "./assets/characters/eliott/blush.png",
+    "concerned": "./assets/characters/eliott/concerned.png",
+    "happy": "./assets/characters/eliott/happy.png",
+    "neutral": "./assets/characters/eliott/neutral.png",
+    "normal": "./assets/characters/eliott/normal.png",
+    "pleased": "./assets/characters/eliott/pleased.png",
+    "reading": "./assets/characters/eliott/reading.png",
+    "surprised": "./assets/characters/eliott/surprised.png"
+  },
+  "franck": {
+    "name": "Franck",
+    "annoyed": "./assets/characters/franck/annoyed.png",
+    "blushing": "./assets/characters/franck/blushing.png",
+    "concerned": "./assets/characters/franck/concerned.png",
+    "dead": "./assets/characters/franck/dead.png",
+    "happy": "./assets/characters/franck/happy.png",
+    "neutral": "./assets/characters/franck/neutral.png",
+    "normal": "./assets/characters/franck/normal.png",
+    "pleased": "./assets/characters/franck/pleased.png",
+    "surprised": "./assets/characters/franck/surprised.png"
+  },
+  "juliette": {
+    "name": "Juliette",
+    "annoyed": "./assets/characters/juliette/annoyed.png",
+    "blush": "./assets/characters/juliette/blush.png",
+    "concerned": "./assets/characters/juliette/concerned.png",
+    "explain": "./assets/characters/juliette/explain.png",
+    "happy": "./assets/characters/juliette/happy.png",
+    "neutral": "./assets/characters/juliette/neutral.png",
+    "normal": "./assets/characters/juliette/normal.png",
+    "surprised": "./assets/characters/juliette/surprised.png"
+  },
+  "rose": {
+    "name": "Rose",
+    "angry": "./assets/characters/rose/angry.png",
+    "annoyed": "./assets/characters/rose/annoyed.png",
+    "concerned": "./assets/characters/rose/concerned.png",
+    "dirty-surprised": "./assets/characters/rose/dirty-surprised.png",
+    "happy": "./assets/characters/rose/happy.png",
+    "neutral": "./assets/characters/rose/neutral.png",
+    "pleased": "./assets/characters/rose/pleased.png",
+    "surprised": "./assets/characters/rose/surprised.png"
+  },
+  "valentine": {
+    "name": "Valentine",
+    "annoyed": "./assets/characters/valentine/annoyed.png",
+    "concerned": "./assets/characters/valentine/concerned.png",
+    "happy": "./assets/characters/valentine/happy.png",
+    "neutral": "./assets/characters/valentine/neutral.png",
+    "normal": "./assets/characters/valentine/normal.png",
+    "thinking": "./assets/characters/valentine/thinking.png",
+    "wave": "./assets/characters/valentine/wave.png"
+  }
+}

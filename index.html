@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
+    <link rel="stylesheet" href="./output.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap");
+    </style>
+    <link rel="icon" type="image/x-icon" href="./assets/icon/sanglant.ico" />
+    <title>Hide and Seek</title>
+  </head>
+  <body class="h-full bg-black">
+    <!-- Début page de démarrage -->
+    <div
+      id="starting-page"
+      class="flex h-full w-full flex-col items-center justify-center gap-y-5 bg-black font-tiny5 text-white"
+    >
+      <div class="flex">
+        <h1 id="game-title" class="text-9xl">Hide and seek</h1>
+        <span id="dots" class="text-9xl"></span>
+      </div>
+      <label id="pseudo-label" for="pseudo" class="text-8xl opacity-0"
+        >Entrez votre nom:</label
+      >
+      <input
+        id="pseudo"
+        type="text"
+        autocomplete="off"
+        class="w-1/2 border-4 border-white bg-black text-center text-8xl opacity-0 outline-none"
+      />
+      <div id="gender-icons-container" class="flex h-16 gap-x-8 opacity-0">
+        <img
+          id="male"
+          src="./assets/images/gender-icons/male.png"
+          alt=""
+          class="clickable h-full cursor-pointer opacity-50"
+        />
+        <img
+          id="female"
+          src="./assets/images/gender-icons/female.png"
+          alt=""
+          class="clickable h-full cursor-pointer opacity-50"
+        />
+      </div>
+      <button id="play-button" class="mt-4 bg-none text-7xl opacity-0" disabled>
+        Jouer
+      </button>
+    </div>
+    <!-- Fin page de démarrage -->
+
+    <!-- Début intro -->
+    <div
+      id="intro-page"
+      class="hidden h-full w-full flex-col items-center justify-center gap-8 bg-black text-center font-pixelSans text-4xl text-white [&>p]:w-3/5"
+    >
+      <p id="intro-text"></p>
+    </div>
+    <!-- Fin intro -->
+
+    <!-- Début page pour les dialogues -->
+    <div
+      id="dialogue-page"
+      class="hidden h-full w-full flex-col bg-black bg-cover bg-center p-8"
+    >
+      <div id="characters-container" class="flex h-3/4 w-full flex-row">
+        <div
+          id="left-character"
+          class="flex w-1/2 items-end justify-start"
+        ></div>
+        <div
+          id="right-character"
+          class="flex w-1/2 items-end justify-end"
+        ></div>
+      </div>
+      <!-- Début boîte de dialogue -->
+      <div
+        id="dialogue-box"
+        class="relative flex items-center justify-center bg-black"
+      >
+        <!-- Début nom du personnage de gauche -->
+        <div
+          id="left-character-name-container"
+          class="absolute left-[40px] top-[-40px] z-10 hidden w-[170px] items-center justify-center justify-self-center bg-black"
+        >
+          <div
+            class="name-box flex w-full items-center justify-center font-pixelSans"
+          >
+            <p id="left-character-name" class="text-3xl text-white"></p>
+            <div class="box__line box__line--top"></div>
+            <div class="box__line box__line--right"></div>
+            <div class="box__line box__line--left"></div>
+          </div>
+        </div>
+        <!-- Fin nom du personnage de gauche -->
+
+        <!-- Début nom du personnage de droite -->
+        <div
+          id="right-character-name-container"
+          class="absolute right-[40px] top-[-40px] z-10 hidden w-[170px] items-center justify-center justify-self-center bg-black"
+        >
+          <div
+            class="name-box flex w-full items-center justify-center font-pixelSans"
+          >
+            <p id="right-character-name" class="text-3xl text-white"></p>
+            <div class="box__line box__line--top"></div>
+            <div class="box__line box__line--right"></div>
+            <div class="box__line box__line--left"></div>
+          </div>
+        </div>
+        <!-- Fin nom du personnage de droite -->
+        <div id="dial-box" class="box flex w-full font-tiny5">
+          <p id="dialogue" class="ml-3 mt-3 text-3xl text-white"></p>
+          <button
+            id="next-dialogue-btn"
+            class="absolute bottom-2 right-2 text-3xl text-white opacity-0"
+            disabled
+          >
+            Suivant...
+          </button>
+          <div class="box__line box__line--top"></div>
+          <div class="box__line box__line--right"></div>
+          <div class="box__line box__line--bottom"></div>
+          <div class="box__line box__line--left"></div>
+        </div>
+      </div>
+      <!-- Fin boîte de dialogue -->
+      <!-- Début boîte de choix -->
+      <div
+        id="choices-box"
+        class="relative hidden items-center justify-center bg-black"
+      >
+        <div
+          class="box flex w-full flex-col items-center justify-center font-tiny5 text-white"
+        >
+          <p id="question" class="ml-3 mt-3 text-3xl text-white"></p>
+          <div
+            id="choices-btn-container"
+            class="choices-btn-container flex flex-col text-3xl"
+          ></div>
+          <div class="box__line box__line--top"></div>
+          <div class="box__line box__line--right"></div>
+          <div class="box__line box__line--bottom"></div>
+          <div class="box__line box__line--left"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin boîte de choix -->
+
+    <script src="./script.js"></script>
+  </body>
+</html>

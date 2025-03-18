@@ -69,7 +69,8 @@ class Game {
     this.animateGameTitle();
 
     if (savedScene) {
-      this.toggleView(this.startingPage, this.dialoguePage);
+      this.startingPage.style.display = "none";
+      this.dialoguePage.style.display = "flex";
       this.setGender(savedGender === "true" ? "male" : "female");
       this.pseudo = savedPseudo;
       this.mainCharacter.name = this.pseudo;
@@ -87,7 +88,11 @@ class Game {
       this.scenes = await scenesRes.json();
 
       // On démarre avec la scène d'id 0
-      this.currentScene = this.scenes.find((scene) => scene.id === parseInt(savedScene) ?? 0);
+      if (!savedScene) {
+        this.currentScene = this.scenes.find((scene) => scene.id === 0);
+      } else {
+        this.currentScene = this.scenes.find((scene) => scene.id === parseInt(savedScene));
+      }
     } catch (error) {
       console.error("Erreur lors du chargement des données:", error);
     }

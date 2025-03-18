@@ -134,7 +134,7 @@ const playIntro = () => {
 
   setTimeout(() => {
     new TypeIt("#intro-text", {
-      speed: 50, // Vitesse du texte
+      speed: 5, // Vitesse du texte
       // afterStep: (step) => {
       //   blip.currentTime = 0;
       //   blip.play();
@@ -142,22 +142,22 @@ const playIntro = () => {
       cursor: false, // Enlève le curseur
     })
       .type("7 DÉCEMBRE 19H 1996")
-      .pause(2000)
+      // .pause(2000)
       .empty() // Vide le texte
       .type(
         "La nuit tombait lentement, enveloppant la forêt d’un voile d’obscurité oppressant.",
       )
-      .pause(2000)
+      // .pause(2000)
       .empty() // Vide le texte
       .type(
         "Un groupe de cinq amis, excités par l’idée d’un week-end loin de tout, s’enfonçait sur un sentier étroit..",
       )
-      .pause(2000)
+      // .pause(2000)
       .empty() // Vide le texte
       .type(
         "Leurs lampes torches projetant des faisceaux vacillants entre les arbres imposants.",
       )
-      .pause(2000)
+      // .pause(2000)
       .empty()
       .exec(() => {
         // Une fois tous les textes affichés, passe de la page d'intro à la prochaine page
@@ -189,7 +189,7 @@ const type = (string) => {
     let italicString = string.replaceAll("**", "");
 
     new TypeIt(dialogue, {
-      speed: 10,
+      speed: 5,
       // afterStep: (step) => {
       //   blip.currentTime = 0;
       //   blip.play();
@@ -209,7 +209,7 @@ const type = (string) => {
   }
 
   new TypeIt(dialogue, {
-    speed: 10,
+    speed: 5,
     // afterStep: (step) => {
     //   blip.currentTime = 0;
     //   blip.play();

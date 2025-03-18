@@ -1,413 +1,403 @@
-// Stock tous les personnages
-let characters;
+const savedPseudo = localStorage.getItem("pseudo");
+const savedGender = localStorage.getItem("gender");
+const savedScene = localStorage.getItem("scene");
 
-fetch("./data/characters.json")
-  .then((response) => response.json())
-  .then((data) => (characters = data));
+class Game {
+  constructor() {
+    // Initialise l'état du jeu
+    this.initState();
+    // Récupère et stocke tous les éléments du DOM nécessaires
+    this.cacheDOM();
+  }
 
-let scenes;
-fetch("./data/dialogues.json")
-  .then((response) => response.json())
-  .then((data) => {
-    scenes = data;
-    scene = scenes.find((scene) => scene.id === 0);
-  });
+  // Initialise les variables d'état
+  initState() {
+    // Données du jeu
+    this.characters = null;
+    this.scenes = null;
+    this.currentScene = null;
+    this.dialogueIndex = 0;
+    this.isTyping = false;
+    this.isChoosing = false;
 
-// Joue le son du début
-const entrySound = new Audio("./assets/audio/entry-sound.mp3");
-entrySound.play();
+    // Infos du joueur
+    this.pseudo = "";
+    this.gender = null; // true pour male, false pour female
+    this.mainCharacter = null;
+    this.secondCharacter = null;
 
-// const blip = new Audio("./assets/audio/blip.wav");
+    // Sons
+    this.entrySound = new Audio("./assets/audio/entry-sound.mp3");
+    // this.blip = new Audio("./assets/audio/blip.wav");
+  }
 
-// Ajoute les 3 petits points au titre après son animation
-const gameTitle = document.querySelector("#game-title");
-gameTitle.addEventListener("animationend", () => {
-  new TypeIt("#dots", {
-    cursor: false,
-  })
-    .type(".")
-    .pause(200)
-    .type(".")
-    .pause(200)
-    .type(".")
-    .go();
-});
+  // Stocke dans des propriétés tous les éléments DOM utilisés
+  cacheDOM() {
+    // Éléments généraux
+    this.gameTitle = document.querySelector("#game-title");
+    this.dots = document.querySelector("#dots");
+    this.pseudoField = document.querySelector("#pseudo");
+    this.playButton = document.querySelector("#play-button");
+    this.dialogue = document.querySelector("#dialogue");
+    this.nextDialogueBtn = document.querySelector("#next-dialogue-btn");
 
-// Fonction qui change de page avec un fondu
-const toggleView = (from, to) => {
-  from.classList.add("fade-out");
+    // Pages
+    this.startingPage = document.querySelector("#starting-page");
+    this.introPage = document.querySelector("#intro-page");
+    this.dialoguePage = document.querySelector("#dialogue-page");
 
-  from.addEventListener("animationend", () => {
-    from.style.display = "none";
-    from.classList.remove("fade-out");
+    // Personnages affichés
+    this.leftCharacter = document.querySelector("#left-character");
+    this.rightCharacter = document.querySelector("#right-character");
+    this.leftCharacterNameContainer = document.querySelector("#left-character-name-container");
+    this.rightCharacterNameContainer = document.querySelector("#right-character-name-container");
+    this.leftCharacterName = document.querySelector("#left-character-name");
+    this.rightCharacterName = document.querySelector("#right-character-name");
 
-    to.style.display = "flex";
-    to.classList.add("fade-in");
+    // Zone de dialogue et choix
+    this.dialBox = document.querySelector("#dial-box");
+    this.choicesBox = document.querySelector("#choices-box");
+    this.choicesBtnContainer = document.querySelector("#choices-btn-container");
+    this.questionContainer = document.querySelector("#question");
+  }
+
+  // Méthode d'initialisation : charge les données et installe les écouteurs d'évènements
+  async init() {
+    await this.loadData();
+    this.setupListeners();
+    this.playEntrySound();
+    this.animateGameTitle();
+
+    if (savedScene) {
+      this.toggleView(this.startingPage, this.dialoguePage);
+      this.setGender(savedGender === "true" ? "male" : "female");
+      this.pseudo = savedPseudo;
+      this.mainCharacter.name = this.pseudo;
+      this.goNext();
+    }
+  }
+
+  // Charge les données depuis les fichiers JSON
+  async loadData() {
+    try {
+      const charactersRes = await fetch("./data/characters.json");
+      this.characters = await charactersRes.json();
+
+      const scenesRes = await fetch("./data/dialogues.json");
+      this.scenes = await scenesRes.json();
+
+      // On démarre avec la scène d'id 0
+      this.currentScene = this.scenes.find((scene) => scene.id === parseInt(savedScene) ?? 0);
+    } catch (error) {
+      console.error("Erreur lors du chargement des données:", error);
+    }
+  }
+
+  // Joue le son d'entrée
+  playEntrySound() {
+    this.entrySound.play();
+  }
+
+  // Animation du titre avec les 3 petits points
+  animateGameTitle() {
+    this.gameTitle.addEventListener("animationend", () => {
+      new TypeIt("#dots", {
+        cursor: false,
+      })
+        .type(".")
+        // .pause(200)
+        .type(".")
+        // .pause(200)
+        .type(".")
+        .go();
+    });
+  }
+
+  // Configure les écouteurs d'évènements
+  setupListeners() {
+    // Active/désactive le bouton "Jouer" en fonction du pseudo et du genre
+    this.pseudoField.addEventListener("input", () => this.checkPlayButton());
+
+    // Sélection du genre via les icônes (attend des éléments avec id "male" et "female")
+    const genderIcons = document.querySelector("#gender-icons-container").children;
+    Array.from(genderIcons).forEach((icon) => {
+      icon.addEventListener("click", () => this.setGender(icon.id));
+    });
+
+    // Lancement de l'intro au clic sur le bouton "Jouer"
+    this.playButton.addEventListener("click", () => this.playIntro());
+
+    // Avance l'histoire au clic sur la boîte de dialogue
+    const dialogueBox = document.querySelector("#dialogue-box");
+    dialogueBox.addEventListener("click", () => this.goNext());
+  }
+
+  // Vérifie si le bouton "Jouer" doit être activé
+  checkPlayButton() {
+    if (this.pseudoField.value.length >= 3 && this.gender !== null) {
+      this.enablePlayButton(true);
+    } else {
+      this.enablePlayButton(false);
+    }
+  }
+
+  // Active ou désactive le bouton "Jouer"
+  enablePlayButton(enable) {
+    this.playButton.disabled = !enable;
+    this.playButton.style.opacity = enable ? "1" : "0.5";
+  }
+
+  // Définit le genre choisi et les personnages associés
+  setGender(selectedGender) {
+    // Détermine si le genre sélectionné est masculin
+    const isMale = selectedGender === "male";
+
+    // Met à jour les propriétés de l'objet en fonction du genre
+    this.gender = isMale;
+    this.mainCharacter = isMale ? this.characters.eliott : this.characters.rose;
+    this.secondCharacter = isMale ? this.characters.rose : this.characters.eliott;
+
+    // Sélectionne les images du DOM
+    const maleImg = document.querySelector("#male");
+    const femaleImg = document.querySelector("#female");
+
+    // Modifie l'opacité en fonction du genre sélectionné
+    maleImg.style.opacity = isMale ? "1" : "0.5";
+    femaleImg.style.opacity = isMale ? "0.5" : "1";
+
+    localStorage.setItem("gender", isMale);
+
+    // Vérifie si le bouton de lecture doit être activé
+    this.checkPlayButton();
+  }
+
+  // Change de page avec une transition en fondu
+  toggleView(from, to) {
+    from.classList.add("fade-out");
+    from.addEventListener(
+      "animationend",
+      () => {
+        from.style.display = "none";
+        from.classList.remove("fade-out");
+
+        to.style.display = "flex";
+        to.classList.add("fade-in");
+
+        setTimeout(() => {
+          to.classList.add("visible");
+        }, 50);
+      },
+      { once: true },
+    );
+  }
+
+  // Lance l'intro du jeu
+  playIntro() {
+    // Récupère le pseudo et met à jour le personnage principal
+    this.pseudo = this.pseudoField.value;
+    this.mainCharacter.name = this.pseudo;
+
+    localStorage.setItem("pseudo", this.pseudo);
+
+    // Transition de la page de démarrage à l'intro
+    this.toggleView(this.startingPage, this.introPage);
 
     setTimeout(() => {
-      to.classList.add("visible");
-    }, 50);
-  });
-};
-
-// Active / désactive le bouton "Jouer"
-const playButton = document.querySelector("#play-button");
-const enablePlayButton = (bool) => {
-  if (bool) {
-    playButton.disabled = false;
-    playButton.style.opacity = "1";
-  } else {
-    playButton.disabled = true;
-    playButton.style.opacity = "0.5";
-  }
-};
-
-// Stock les infos du joueur
-let pseudo;
-let gender;
-let mainCharacter;
-let secondCharacter;
-
-// Active le bouton "Jouer" si les conditions sont respectées
-const pseudoField = document.querySelector("#pseudo");
-pseudoField.addEventListener("input", () => {
-  if (pseudoField.value.length >= 3 && (gender === false || gender === true)) {
-    enablePlayButton(true);
-  } else {
-    enablePlayButton(false);
-  }
-});
-
-// Ajoute les eventListener aux images de sélection de genre
-const genderIcons = document.querySelector("#gender-icons-container").children;
-Array.from(genderIcons).forEach((genderIcon) => {
-  genderIcon.addEventListener("click", () => getGender(genderIcon.id));
-});
-
-/*
-  Change l'opacité des images de genre (male / female)
-  pour que l'utilisateur sache ce qu'il a sélectionné
-  Défini le personnage principal et le personnage secondaire
-  en fonction du sexe choisi
-*/
-const maleImg = document.querySelector("#male");
-const femaleImg = document.querySelector("#female");
-const getGender = (genderSelected) => {
-  if (genderSelected === "male") {
-    gender = true;
-    mainCharacter = characters.eliott;
-    secondCharacter = characters.rose;
-    maleImg.style.opacity = "1";
-    femaleImg.style.opacity = "0.5";
-  } else {
-    gender = false;
-    mainCharacter = characters.rose;
-    secondCharacter = characters.eliott;
-    maleImg.style.opacity = "0.5";
-    femaleImg.style.opacity = "1";
-  }
-
-  if (pseudoField.value.length >= 3 && (gender === false || gender === true)) {
-    enablePlayButton(true);
-  } else {
-    enablePlayButton(false);
-  }
-};
-
-// Ajoute au bouton "Jouer" la fonction qui lance l'intro
-playButton.addEventListener("click", () => playIntro());
-
-const left = "left";
-const right = "right";
-
-// Les 3 pages qui seront utilisées pour le projet
-const dialoguePage = document.querySelector("#dialogue-page");
-const startingPage = document.querySelector("#starting-page");
-const introPage = document.querySelector("#intro-page");
-
-const playIntro = () => {
-  // Récupère le pseudo du joueur quand il clique sur "jouer"
-  pseudo = pseudoField.value;
-  mainCharacter.name = pseudo;
-  // Passe de la starting page à la page d'intro
-  toggleView(startingPage, introPage);
-
-  setTimeout(() => {
-    new TypeIt("#intro-text", {
-      speed: 50, // Vitesse du texte
-      // afterStep: (step) => {
-      //   blip.currentTime = 0;
-      //   blip.play();
-      // },
-      cursor: false, // Enlève le curseur
-    })
-      .type("7 DÉCEMBRE 19H 1996")
-      .pause(2000)
-      .empty() // Vide le texte
-      .type(
-        "La nuit tombait lentement, enveloppant la forêt d’un voile d’obscurité oppressant.",
-      )
-      .pause(2000)
-      .empty() // Vide le texte
-      .type(
-        "Un groupe de cinq amis, excités par l’idée d’un week-end loin de tout, s’enfonçait sur un sentier étroit..",
-      )
-      .pause(2000)
-      .empty() // Vide le texte
-      .type(
-        "Leurs lampes torches projetant des faisceaux vacillants entre les arbres imposants.",
-      )
-      .pause(2000)
-      .empty()
-      .exec(() => {
-        // Une fois tous les textes affichés, passe de la page d'intro à la prochaine page
-        toggleView(introPage, dialoguePage);
-        setTimeout(() => {
-          showCharacter(mainCharacter.neutral, left, mainCharacter.name);
-          type(
-            "Tu es sûr que c’est ici ? C’est vraiment isolé, non ? Je trouve que c’est… un peu flippant.",
-          );
-        }, 1000);
+      new TypeIt("#intro-text", {
+        speed: 5, // 50
+        cursor: false,
       })
-      .go();
-  }, 500);
-};
+        .type("7 DÉCEMBRE 1996, 19h")
+        // .pause(2000)
+        .empty()
+        .type("La nuit tombait lentement, enveloppant la forêt d’un voile d’obscurité oppressant.")
+        // .pause(2000)
+        .empty()
+        .type(
+          "Un groupe de cinq amis, excités par l’idée d’un week-end loin de tout, s’enfonçait sur un sentier étroit..",
+        )
+        // .pause(2000)
+        .empty()
+        .type("Leurs lampes torches projetant des faisceaux vacillants entre les arbres imposants.")
+        // .pause(2000)
+        .empty()
+        .exec(() => {
+          // Une fois l'intro terminée, passe à la page de dialogue
+          this.toggleView(this.introPage, this.dialoguePage);
+          setTimeout(() => {
+            // Affiche le premier personnage et le premier dialogue
+            this.showCharacter(this.mainCharacter.neutral, "left", this.mainCharacter.name);
+            this.typeDialogue(
+              "Tu es sûr que c’est ici ? C’est vraiment isolé, non ? Je trouve que c’est… un peu flippant.",
+            );
+          }, 1000);
+        })
+        .go();
+    }, 500);
+  }
 
-/*
-  Fonction qui changera le texte de la boîte de dialogue
-  isTyping empêche l'utilisateur de cliquer pour passer le dialogue si
-  le dialogue n'a pas fini d'être écrit
-*/
-const dialogue = document.querySelector("#dialogue");
-let isTyping = false;
-const type = (string) => {
-  isTyping = true;
+  // Affiche le texte dans la boîte de dialogue
+  typeDialogue(text) {
+    this.isTyping = true;
 
-  const isItalic = /\*\*/;
-  if (string.match(isItalic)) {
-    dialogue.style.fontStyle = "italic";
-    let italicString = string.replaceAll("**", "");
+    // Passage en italique si le texte contient des **
+    if (text.match(/\*\*/)) {
+      this.dialogue.style.fontStyle = "italic";
+      text = text.replaceAll("**", "");
+    } else {
+      this.dialogue.style.fontStyle = "inherit";
+    }
 
-    new TypeIt(dialogue, {
+    new TypeIt(this.dialogue, {
       speed: 10,
-      // afterStep: (step) => {
-      //   blip.currentTime = 0;
-      //   blip.play();
-      // },
       cursor: false,
     })
-      .type(italicString)
+      .type(text)
       .exec(() => {
-        enableNextDialogueBtn(true);
-        isTyping = false;
+        this.enableNextDialogueBtn(true);
+        this.isTyping = false;
       })
       .go();
-
-    return;
-  } else {
-    dialogue.style.fontStyle = "inherit";
   }
 
-  new TypeIt(dialogue, {
-    speed: 10,
-    // afterStep: (step) => {
-    //   blip.currentTime = 0;
-    //   blip.play();
-    // },
-    cursor: false,
-  })
-    .type(string)
-    .exec(() => {
-      enableNextDialogueBtn(true);
-      isTyping = false;
-    })
-    .go();
-};
-
-// Fonction qui active ou désactive le bouton pour pour passer au dialogue suivant
-const nextDialogueBtn = document.querySelector("#next-dialogue-btn");
-const enableNextDialogueBtn = (bool) => {
-  if (bool) {
-    nextDialogueBtn.disabled = false;
-    nextDialogueBtn.style.opacity = "0.6";
-  } else {
-    nextDialogueBtn.disabled = true;
-    nextDialogueBtn.style.opacity = "0";
-  }
-};
-
-let scene;
-let dialogueIndex = 0;
-
-// Fonction qui envoie le prochain dialogue
-const nextDialogue = () => {
-  if (isTyping) return;
-
-  // Vide la boîte de dialogue avant de rajouter le texte suivant
-  dialogue.innerText = "";
-
-  type(scene.dialogues[dialogueIndex].text);
-
-  if (dialogueIndex === scene.dialogues.length - 1) {
-    console.log("Fin du chapitre");
-    isChoosing = true;
-    dialogueIndex = 0;
-  } else {
-    dialogueIndex++;
-  }
-};
-
-// Fait tout ce qu'il faut pour afficher le bon perso blablabla
-const goNext = () => {
-  // Si le dialogue n'a pas terminé d'être tapé, ne fait rien
-  if (isTyping) return;
-
-  if (scene.dialogues[dialogueIndex].background) {
-    console.log("y'a un background", scene.dialogues[dialogueIndex].background);
-    dialoguePage.classList.add("animate-background");
-    dialoguePage.style.backgroundImage = `url("${scene.dialogues[dialogueIndex].background}")`;
-    setTimeout(() => {
-      dialoguePage.classList.remove("animate-background");
-    }, 1000);
+  // Active ou désactive le bouton pour passer au dialogue suivant
+  enableNextDialogueBtn(enable) {
+    this.nextDialogueBtn.disabled = !enable;
+    this.nextDialogueBtn.style.opacity = enable ? "0.6" : "0";
   }
 
-  // Si le joueur n'est pas entrain de faire un choix:
-  if (!isChoosing) {
-    // Récupère la source de l'image
-    let source;
-    if (Array.isArray(scene.dialogues[dialogueIndex].source)) {
-      if (gender) {
-        source = scene.dialogues[dialogueIndex].source[1];
+  // Passe au dialogue suivant et gère la fin de scène
+  nextDialogue() {
+    if (this.isTyping) return;
+
+    // Réinitialise le contenu du dialogue
+    this.dialogue.innerText = "";
+    this.typeDialogue(this.currentScene.dialogues[this.dialogueIndex].text);
+
+    if (this.dialogueIndex === this.currentScene.dialogues.length - 1) {
+      console.log("Fin du chapitre");
+      this.isChoosing = true;
+      this.dialogueIndex = 0;
+    } else {
+      this.dialogueIndex++;
+    }
+  }
+
+  // Gère l'avancement de l'histoire (dialogue ou affichage des choix)
+  goNext() {
+    if (this.isTyping) return;
+
+    // Changement de background si nécessaire
+    const currentDialogue = this.currentScene.dialogues[this.dialogueIndex];
+    localStorage.setItem("scene", this.currentScene.id);
+    if (currentDialogue && currentDialogue.background) {
+      this.dialoguePage.classList.add("animate-background");
+      this.dialoguePage.style.backgroundImage = `url("${currentDialogue.background}")`;
+      setTimeout(() => {
+        this.dialoguePage.classList.remove("animate-background");
+      }, 1000);
+    }
+
+    if (!this.isChoosing) {
+      // Détermine l'image à afficher en fonction du genre
+      let source = Array.isArray(currentDialogue.source)
+        ? this.gender
+          ? currentDialogue.source[1]
+          : currentDialogue.source[0]
+        : currentDialogue.source;
+
+      // Détermine le nom du personnage qui parle
+      let name;
+      if (currentDialogue.character === "secondCharacter") {
+        name = this.secondCharacter.name;
+      } else if (currentDialogue.character === "mainCharacter") {
+        name = this.pseudo;
       } else {
-        source = scene.dialogues[dialogueIndex].source[0];
+        name = currentDialogue.character;
       }
+      this.enableNextDialogueBtn(false);
+      this.showCharacter(source, currentDialogue.side, name);
+      this.nextDialogue();
     } else {
-      source = scene.dialogues[dialogueIndex].source;
+      // Affiche les choix de dialogue si c'est le moment
+      this.showChoices(this.currentScene.question, this.currentScene.choices);
     }
+  }
 
-    // Le côté de l'image du personnage
-    const side = scene.dialogues[dialogueIndex].side;
+  // Affiche un personnage (image et nom) à gauche ou à droite
+  showCharacter(source, side, characterName) {
+    if (characterName === "Narrative") {
+      this.emptyCharacters();
+      return;
+    }
+    const imageCharacter = document.createElement("img");
+    imageCharacter.src = source;
 
-    // Le nom et la source de l'image qui seront affiché dans la boîte de dialogue
-    let name;
-
-    if (scene.dialogues[dialogueIndex].character === "secondCharacter") {
-      name = secondCharacter.name;
-    } else if (scene.dialogues[dialogueIndex].character === "mainCharacter") {
-      name = pseudo;
+    if (side === "left") {
+      this.leftCharacter.innerHTML = "";
+      this.leftCharacter.appendChild(imageCharacter);
+      this.whoTalks("left", characterName);
     } else {
-      name = scene.dialogues[dialogueIndex].character;
+      this.rightCharacter.innerHTML = "";
+      this.rightCharacter.appendChild(imageCharacter);
+      this.whoTalks("right", characterName);
     }
-
-    // Affiche le bouton "Suivant"
-    enableNextDialogueBtn(false);
-    // Affiche le personnage entrain de parler
-    showCharacter(source, side, name);
-    // Affiche le dialogue
-    nextDialogue();
-  }
-  // Si le joueur est entrain de faire un choix
-  else {
-    // Récupère la question et les choix associés
-    const question = scene.question;
-    const choices = scene.choices;
-    // Puis les affiche
-    showChoices(question, choices);
-  }
-  // La source de l'image
-};
-
-// Affiche le prochain dialogue quand on clique sur la boîte de dialogue et masque le bouton "suivant"
-const dialogueBox = document.querySelector("#dialogue-box");
-dialogueBox.addEventListener("click", () => goNext());
-
-const leftCharacter = document.querySelector("#left-character");
-const rightCharacter = document.querySelector("#right-character");
-// Affiche à gauche ou à droite la source de l'image
-const showCharacter = (source, leftOrRight, characterName) => {
-  if (characterName === "Narrative") {
-    emptyCharacters();
-    return;
-  }
-  const imageCharacter = document.createElement("img");
-  imageCharacter.src = source;
-
-  if (leftOrRight === "left") {
-    leftCharacter.innerHTML = "";
-    leftCharacter.appendChild(imageCharacter);
-  } else {
-    rightCharacter.innerHTML = "";
-    rightCharacter.appendChild(imageCharacter);
   }
 
-  whoTalks(leftOrRight, characterName);
-};
-
-const leftCharacterNameContainer = document.querySelector(
-  "#left-character-name-container",
-);
-const rightCharacterNameContainer = document.querySelector(
-  "#right-character-name-container",
-);
-const leftCharacterName = document.querySelector("#left-character-name");
-const rightCharacterName = document.querySelector("#right-character-name");
-// Gère l'opacité du personnage qui parle, et affiche son nom
-const whoTalks = (leftOrRight, characterName) => {
-  if (leftOrRight === "left") {
-    leftCharacterName.innerText = characterName;
-    leftCharacterNameContainer.style.display = "flex";
-    rightCharacterNameContainer.style.display = "none";
-    leftCharacter.classList.remove("inactive-character");
-    rightCharacter.classList.add("inactive-character");
-  } else {
-    rightCharacterName.innerText = characterName;
-    leftCharacterNameContainer.style.display = "none";
-    rightCharacterNameContainer.style.display = "flex";
-    rightCharacter.classList.remove("inactive-character");
-    leftCharacter.classList.add("inactive-character");
+  // Met en évidence le personnage qui parle et affiche son nom
+  whoTalks(side, characterName) {
+    if (side === "left") {
+      this.leftCharacterName.innerText = characterName;
+      this.leftCharacterNameContainer.style.display = "flex";
+      this.rightCharacterNameContainer.style.display = "none";
+      this.leftCharacter.classList.remove("inactive-character");
+      this.rightCharacter.classList.add("inactive-character");
+    } else {
+      this.rightCharacterName.innerText = characterName;
+      this.leftCharacterNameContainer.style.display = "none";
+      this.rightCharacterNameContainer.style.display = "flex";
+      this.rightCharacter.classList.remove("inactive-character");
+      this.leftCharacter.classList.add("inactive-character");
+    }
   }
-};
 
-let isChoosing = false;
+  // Affiche les choix disponibles à l'écran
+  showChoices(question, choices) {
+    this.emptyCharacters();
+    this.choicesBtnContainer.innerHTML = "";
+    this.dialBox.style.display = "none";
+    this.choicesBox.style.display = "flex";
+    this.questionContainer.innerText = question;
 
-const dialBox = document.querySelector("#dial-box");
-const choicesBox = document.querySelector("#choices-box");
-const choicesBtnContainer = document.querySelector("#choices-btn-container");
-const questionContainer = document.querySelector("#question");
-
-const showChoices = (question, array) => {
-  emptyCharacters();
-  choicesBtnContainer.innerHTML = "";
-  dialBox.style.display = "none";
-  choicesBox.style.display = "flex";
-
-  questionContainer.innerText = question;
-
-  array.forEach((element) => {
-    const button = document.createElement("button");
-    button.innerText = element.choice;
-    button.addEventListener("click", () => {
-      scene = scenes.find((scene) => scene.id === element.nextId);
-      dialogueIndex = 0;
-      isChoosing = false;
-
-      hideChoices();
-      goNext();
+    choices.forEach((choice) => {
+      const button = document.createElement("button");
+      button.innerText = choice.choice;
+      button.addEventListener("click", () => {
+        this.currentScene = this.scenes.find((scene) => scene.id === choice.nextId);
+        this.dialogueIndex = 0;
+        this.isChoosing = false;
+        this.hideChoices();
+        this.goNext();
+      });
+      this.choicesBtnContainer.appendChild(button);
     });
-    choicesBtnContainer.appendChild(button);
-  });
-};
+  }
 
-// Cache la div qui contient les choix
-const hideChoices = () => {
-  dialBox.style.display = "flex";
-  choicesBox.style.display = "none";
-};
+  // Cache la zone des choix
+  hideChoices() {
+    this.dialBox.style.display = "flex";
+    this.choicesBox.style.display = "none";
+  }
 
-// Vide les container des personnages
-const emptyCharacters = () => {
-  leftCharacter.innerHTML = "";
-  rightCharacter.innerHTML = "";
-  leftCharacterNameContainer.style.display = "none";
-  rightCharacterNameContainer.style.display = "none";
-};
+  // Vide les zones d'affichage des personnages
+  emptyCharacters() {
+    this.leftCharacter.innerHTML = "";
+    this.rightCharacter.innerHTML = "";
+    this.leftCharacterNameContainer.style.display = "none";
+    this.rightCharacterNameContainer.style.display = "none";
+  }
+}
+
+// Instanciation et démarrage du jeu
+const game = new Game();
+game.init();

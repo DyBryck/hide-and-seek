@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "commentaires": "INTRO MISE EN PLACE DES PERSO ETC",
     "dialogues": [
       {
         "character": "secondCharacter",
@@ -42,9 +43,10 @@
   },
   {
     "id": 1,
+    "commentaires": "CHOIX DE MONTER LA TENTE         JULIETTE PROPOSE LE CACHE CACHE",
     "dialogues": [
       {
-        "background": "./assets/images/backgrounds/campement.png",
+        "background": "./assets/images/backgrounds/CampBG.png",
         "character": "Narrative",
         "text": "Toi et Juliette êtes en train de monter la tente, les derniers rayons du soleil disparaissant lentement derrière les arbres."
       },
@@ -86,66 +88,10 @@
   },
 
   {
-    "id": 4,
-    "dialogues": [
-      {
-        "character": "mainCharacter",
-        "side": "left",
-        "source": [
-          "./assets/characters/rose/neutral.png",
-          "./assets/characters/eliott/neutral.png"
-        ],
-        "text": "Ok, je suis partant! Cache-cache, en pleine nuit, dans la forêt ? Ça va être génial!”"
-      },
-      {
-        "character": "Juliette",
-        "side": "right",
-        "source": "./assets/characters/juliette/happy.png",
-        "text": "(rire nerveux) :Ouais, ça peut être marrant, non ? Et puis, ça nous changera des histoires bizarres de la forêt."
-      },
-      {
-        "character": "Narrative",
-        "text": "Tout le monde semble se préparer. Les rires s’intensifient un peu, mais un petit frisson d’excitation et d’appréhension parcourt le groupe. Juliette regarde autour d’elle, puis se penche vers toi avec un sourire complice."
-      },
-      {
-        "character": "Juliette",
-        "side": "right",
-        "source": "./assets/characters/juliette/normal.png",
-        "text": "C’est bon, tout le monde est prêt ? Pas de triche, hein ! Le but, c’est de se perdre et de s’amuser."
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "dialogues": [
-      {
-        "character": "mainCharacter",
-        "side": "left",
-        "source": [
-          "./assets/characters/rose/neutral.png",
-          "./assets/characters/eliott/concerned.png"
-        ],
-        "text": "Euh… en pleine nuit, tu es sûre ?"
-      },
-      {
-        "character": "Juliette",
-        "source": "./assets/characters/juliette/happy.png",
-        "text": "(rire nerveux) :Ouais, ça peut être marrant, non ? Et puis, ça nous changera des histoires bizarres de la forêt."
-      },
-      {
-        "character": "Narrative",
-        "text": "Tout le monde semble se préparer. Les rires s’intensifient un peu, mais un petit frisson d’excitation et d’appréhension parcourt le groupe. Juliette regarde autour d’elle, puis se penche vers toi avec un sourire complice."
-      },
-      {
-        "character": "Juliette",
-        "side": "right",
-        "source": "./assets/characters/juliette/normal.png",
-        "text": "C’est bon, tout le monde est prêt ? Pas de triche, hein ! Le but, c’est de se perdre et de s’amuser."
-      }
-    ]
-  },
-  {
     "id": 2,
+    "commentaires": "CHOIX D'EXPLORER LES ENVIRONS",
+    "background": "./assets/images/backgrounds/ForestBG1.png",
+
     "dialogues": [
       {
         "background": "./assets/images/backgrounds/11.png",
@@ -185,7 +131,499 @@
     ]
   },
   {
+    "id": 3,
+    "commentaires": "CHOIX DE PREPARER LE FEU, ON PARS CHERCHER DU BOIS POUR LE FEU , DONC ON PREND LE MEME CHEMIN QUE L'EXPLO",
+    "dialogues": [
+      {
+        "character": "Narrative",
+        "text": "La forêt semblait plus imposante que jamais. Le groupe s’était enfin arrêté pour installer le campement, mais l’ambiance restait lourde, comme si quelque chose était en suspens. "
+      },
+      {
+        "character": "Juliette",
+        "side": "left",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "Bon, faut qu’on installe cette tente. Je vais m’y mettre."
+      },
+      {
+        "character": "Valentine",
+        "side": "left",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "C’est vraiment calme ici, non ? Je trouve ça… presque un peu trop calme"
+      },
+      {
+        "character": "Juliette",
+        "side": "left",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "T’as raison. On dirait que même les oiseaux ont décidé de nous laisser tranquilles."
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/neutral.png"
+        ],
+        "text": "Bon, vous vous occupez de la tente. Je vais chercher du bois pour le feu !"
+      },
+      {
+        "character": "Juliette",
+        "side": "left",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "Tu veux vraiment y aller seul dans la forêt déjà ? On peut t’accompagner."
+      },
+      {
+        "character": "Valentine",
+        "side": "left",
+        "source": "./assets/characters/valentine/neutral.png",
+        "text": "Ouais, tu sais, c’est pas très rassurant de se balader là-dedans seul la nuit…"
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/neutral.png"
+        ],
+        "text": "Franchement, c’est juste pour quelques branches. C’est pas comme si un monstre allait m’attaquer."
+      },
+      {
+        "character": "secondCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/eliott/neutral.png",
+          "./assets/characters/rose/neutral.png"
+        ],
+        "text": "J’espère bien… Mais sois prudente. Ça pourrait être risqué avec la nuit qui tombe."
+      },
+      {
+        "character": "Valentine",
+        "side": "left",
+        "source": "./assets/characters/valentine/neutral.png",
+        "text": "D’accord… mais n’oublie pas de revenir vite, hein ? C’est mieux si on est tous ensemble."
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/neutral.png"
+        ],
+        "text": "Je reviendrai avec du bois, promis. Ne vous inquiétez pas, je suis juste là."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu t’éloignes légèrement du groupe, les bruits de la forêt t’enveloppant peu à peu. Les branches sous tes pieds craquent doucement à chaque pas, mais l’air est étrangement calme, presque suspendu. La lumière des lampes torches du camp devient un point lointain derrière toi."
+      },
+      {
+        "background": "./assets/images/backgrounds/11.png",
+        "character": "Narrative",
+        "text": "Tu progresses dans la forêt. Le craquement des branches sous tes pieds est le seul son perceptible, mais parfois, un bruit lointain te fait sursauter. "
+      },
+      {
+        "character": "Narrative",
+        "text": "L’air est humide et légèrement glacial. En continuant, tu tombes sur des choses étranges."
+      },
+      {
+        "character": "Narrative",
+        "text": "En avançant, tu aperçois un arbre avec une croix gravée profondément dans son tronc. Elle semble récente, comme si elle avait été faite il y a quelques jours."
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/concerned.png",
+          "./assets/characters/eliott/concerned.png"
+        ],
+        "text": "**C’est bizarre… Qui aurait fait ça ici ? Peut-être juste un randonneur, ou un chasseur qui marque son chemin ? Rien de flippant.**"
+      },
+      {
+        "character": "Narrative",
+        "text": "Alors que tu continues à marcher, tu remarques d’autres anomalies dans la forêt. Ce n’est plus juste une croix sur un arbre, mais un enchaînement d’éléments qui rend l’atmosphère de plus en plus oppressante."
+      },
+      {
+        "character": "Narrative",
+        "text": "Pourtant, quelque chose dans cette découverte te pousse à avancer. L’air semble plus froid, plus lourd, comme si la forêt elle-même essayait de te dissuader."
+      }
+    ],
+    "question": "...",
+    "choices": [
+      { "choice": "Rentrer au camp", "nextId": 6 },
+      { "choice": "Continuer l'exploration", "nextId": 7 }
+    ]
+  },
+
+  {
+    "id": 4,
+    "commentaires": "CHOIX REUNISSANT PLUSIEURES VOIES ====== ACCEPTER LE CACHE CACHE AVEC ENTHOUSIASME PUIS ON TOMBE SUR LA CABANE",
+
+    "dialogues": [
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/neutral.png"
+        ],
+        "text": "Ok, je suis partant! Cache-cache, en pleine nuit, dans la forêt ? Ça va être génial!”"
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/happy.png",
+        "text": "(rire nerveux) :Ouais, ça peut être marrant, non ? Et puis, ça nous changera des histoires bizarres de la forêt."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tout le monde semble se préparer. Les rires s’intensifient un peu, mais un petit frisson d’excitation et d’appréhension parcourt le groupe. Juliette regarde autour d’elle, puis se penche vers toi avec un sourire complice."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "C’est bon, tout le monde est prêt ? Pas de triche, hein ! Le but, c’est de se perdre et de s’amuser."
+      },
+      {
+        "character": "Narrative",
+        "text": "Juliette se place dos au feu, pose ses mains sur son visage et commence à compter à voix haute."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Un… deux… trois…"
+      },
+      {
+        "character": "Narrative",
+        "text": "Sans perdre de temps, tout le monde s’éparpille dans la forêt. Les rires nerveux s’éteignent rapidement, remplacés par le craquement des branches sous les pas précipités. L’obscurité semble plus épaisse maintenant que chacun s’éloigne du camp."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu marches d’un pas rapide, cherchant une cachette assez éloignée mais pas trop risquée. Derrière toi, tu entends Valentine murmurer un “Bonne chance” avant de disparaître dans l’ombre. Franck, lui, s’éloigne en courant sans un bruit."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Dix-huit… dix-neuf… vingt…"
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu continues d’avancer, tes yeux s’habituant à la pénombre. Les arbres défilent, tous semblables, et l’excitation du jeu cède peu à peu la place à une sensation étrange. Loin des lumières du feu de camp, la forêt semble vivante, bruissant de sons indistincts."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Vingt-huit… vingt-neuf… trente ! J’arrive !"
+      },
+      {
+        "character": "Narrative",
+        "text": "Juliette crie au loin, et un silence pesant s’abat aussitôt sur la forêt. Tu t’accroupis derrière un tronc, prêt à attendre, mais quelque chose attire ton regard un peu plus loin."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un bâtiment en bois, dissimulé entre les arbres. Une cabane."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu hésites. L’endroit semble abandonné, les planches usées par le temps, la porte légèrement entrouverte, oscillant au gré du vent. Tu ressens un frisson, mais l’idée de t’y cacher est tentante. Personne ne te trouverait là-dedans."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’air devient plus froid à mesure que tu t’approches de la cabane. Elle est vieille, rongée par le temps, avec des planches disjointes et une fenêtre brisée qui ressemble à un œil vide observant la forêt."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu poses la main sur la porte entrouverte. Elle grince légèrement sous la pression de tes doigts, et une odeur de bois humide et de poussière t’envahit. Derrière toi, le silence règne. Le jeu continue, mais tu as l’impression que l’atmosphère s’est alourdie."
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais alors que tu t’avances prudemment, une sensation étrange te serre la poitrine. L’air semble plus lourd. Comme si l’endroit lui-même retenait son souffle."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un bruit, léger, presque imperceptible. Un craquement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu t’arrêtes net. Quelqu’un est là ? Le vent ? Un animal ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Ou… quelque chose d’autre ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "La silhouette se découpe dans la pénombre, immobile, juste au-delà de la lisière des arbres. Ton cœur rate un battement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Puis, tu te ressaisis. C’est sûrement Juliette, te dis-tu pour te rassurer. Elle doit être en train de chercher tout le monde. Après tout, elle compte depuis un moment déjà, non ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais alors que tu t’apprêtes à l’appeler, un détail te frappe."
+      },
+      {
+        "character": "Narrative",
+        "text": "Elle ne bouge pas. Pas un pas. Pas un geste. Elle reste figée, à peine éclairée par les rayons lunaires filtrant entre les branches."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un nouveau frisson te traverse."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’instinct l’emporte : il faut te cacher."
+      },
+      {
+        "character": "Narrative",
+        "text": "Devant toi plusieurs choses: Une vieille penderie en bois, sa porte à moitié ouverte, son intérieur sombre et poussiéreux. Tu pourrais t’y glisser et attendre en retenant ton souffle."
+      },
+      {
+        "character": "Narrative",
+        "text": "Une table bancale, dont la nappe trouée pend encore, offrant une cachette partielle. Mais si quelqu’un entre et regarde dessous…"
+      },
+      {
+        "character": "Narrative",
+        "text": " Si la personne entre sans la refermer complètement, tu pourrais rester dans l’ombre, tapi juste derrière. Mais si elle décide de la fermer…"
+      }
+    ],
+    "question": "Tu décides de te cacher: ?",
+    "choices": [
+      { "choice": "Dans l'amoire", "nextId": 16 },
+      { "choice": "Sous la table", "nextId": 17 },
+      { "choice": "Derrière la porte", "nextId": 18 }
+    ]
+  },
+  {
+    "id": 5,
+    "commentaires": "CHOIX REUNISSANT PLUSIEURES VOIES ====== ACCEPTER LE CACHE CACHE AVEC RETICENSE PUIS ON TOMBE SUR LA CABANE",
+    "dialogues": [
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/concerned.png"
+        ],
+        "text": "Euh… en pleine nuit, tu es sûre ?"
+      },
+      {
+        "character": "Juliette",
+        "source": "./assets/characters/juliette/happy.png",
+        "text": "(rire nerveux) :Ouais, ça peut être marrant, non ? Et puis, ça nous changera des histoires bizarres de la forêt."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tout le monde semble se préparer. Les rires s’intensifient un peu, mais un petit frisson d’excitation et d’appréhension parcourt le groupe. Juliette regarde autour d’elle, puis se penche vers toi avec un sourire complice."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "C’est bon, tout le monde est prêt ? Pas de triche, hein ! Le but, c’est de se perdre et de s’amuser."
+      },
+      {
+        "character": "Narrative",
+        "text": "Juliette se place dos au feu, pose ses mains sur son visage et commence à compter à voix haute."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Un… deux… trois…"
+      },
+      {
+        "character": "Narrative",
+        "text": "Sans perdre de temps, tout le monde s’éparpille dans la forêt. Les rires nerveux s’éteignent rapidement, remplacés par le craquement des branches sous les pas précipités. L’obscurité semble plus épaisse maintenant que chacun s’éloigne du camp."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu marches d’un pas rapide, cherchant une cachette assez éloignée mais pas trop risquée. Derrière toi, tu entends Valentine murmurer un “Bonne chance” avant de disparaître dans l’ombre. Franck, lui, s’éloigne en courant sans un bruit."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Dix-huit… dix-neuf… vingt…"
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu continues d’avancer, tes yeux s’habituant à la pénombre. Les arbres défilent, tous semblables, et l’excitation du jeu cède peu à peu la place à une sensation étrange. Loin des lumières du feu de camp, la forêt semble vivante, bruissant de sons indistincts."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Vingt-huit… vingt-neuf… trente ! J’arrive !"
+      },
+      {
+        "character": "Narrative",
+        "text": "Juliette crie au loin, et un silence pesant s’abat aussitôt sur la forêt. Tu t’accroupis derrière un tronc, prêt à attendre, mais quelque chose attire ton regard un peu plus loin."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un bâtiment en bois, dissimulé entre les arbres. Une cabane."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu hésites. L’endroit semble abandonné, les planches usées par le temps, la porte légèrement entrouverte, oscillant au gré du vent. Tu ressens un frisson, mais l’idée de t’y cacher est tentante. Personne ne te trouverait là-dedans."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’air devient plus froid à mesure que tu t’approches de la cabane. Elle est vieille, rongée par le temps, avec des planches disjointes et une fenêtre brisée qui ressemble à un œil vide observant la forêt."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu poses la main sur la porte entrouverte. Elle grince légèrement sous la pression de tes doigts, et une odeur de bois humide et de poussière t’envahit. Derrière toi, le silence règne. Le jeu continue, mais tu as l’impression que l’atmosphère s’est alourdie."
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais alors que tu t’avances prudemment, une sensation étrange te serre la poitrine. L’air semble plus lourd. Comme si l’endroit lui-même retenait son souffle."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un bruit, léger, presque imperceptible. Un craquement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu t’arrêtes net. Quelqu’un est là ? Le vent ? Un animal ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Ou… quelque chose d’autre ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "La silhouette se découpe dans la pénombre, immobile, juste au-delà de la lisière des arbres. Ton cœur rate un battement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Puis, tu te ressaisis. C’est sûrement Juliette, te dis-tu pour te rassurer. Elle doit être en train de chercher tout le monde. Après tout, elle compte depuis un moment déjà, non ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais alors que tu t’apprêtes à l’appeler, un détail te frappe."
+      },
+      {
+        "character": "Narrative",
+        "text": "Elle ne bouge pas. Pas un pas. Pas un geste. Elle reste figée, à peine éclairée par les rayons lunaires filtrant entre les branches."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un nouveau frisson te traverse."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’instinct l’emporte : il faut te cacher."
+      },
+      {
+        "character": "Narrative",
+        "text": "Devant toi plusieurs choses: Une vieille penderie en bois, sa porte à moitié ouverte, son intérieur sombre et poussiéreux. Tu pourrais t’y glisser et attendre en retenant ton souffle."
+      },
+      {
+        "character": "Narrative",
+        "text": "Une table bancale, dont la nappe trouée pend encore, offrant une cachette partielle. Mais si quelqu’un entre et regarde dessous…"
+      },
+      {
+        "character": "Narrative",
+        "text": " Si la personne entre sans la refermer complètement, tu pourrais rester dans l’ombre, tapi juste derrière. Mais si elle décide de la fermer…"
+      }
+    ],
+    "question": "Tu décides de te cacher: ?",
+    "choices": [
+      { "choice": "Dans l'amoire", "nextId": 16 },
+      { "choice": "Sous la table", "nextId": 17 },
+      { "choice": "Derrière la porte", "nextId": 18 }
+    ]
+  },
+  {
+    "id": 6,
+    "commentaires": "CHOIX RENTRER AU CAMP DE L'ID 3, ON ARRETE L'EXPLORATION ET ON RENTRE AU CAMP ET JULIETTE PROPOSE LE CACHE CACHE",
+
+    "dialogues": [
+      {
+        "character": "Narrative",
+        "text": "Malgré ton envie d’aller plus loin, une voix intérieure, mêlant prudence et raison, te murmure qu’il vaut mieux rentrer au camp avant que quelque chose de plus inquiétant ne se produise. "
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu arrives au camp, où l’ambiance est encore légère. Tes amis rient, parlent fort autour du feu, et semblent totalement insouciants."
+      },
+      {
+        "character": "Narrative",
+        "text": "Pourtant, pour toi, quelque chose cloche. Tes pensées tournent en boucle autour de ce que tu viens de voir. Tu te sens observé, comme si les ombres de la forêt te suivaient encore..."
+      },
+      {
+        "character": "Narrative",
+        "text": "Le feu crépite, mais la lumière vacillante crée des ombres inquiétantes sur les arbres."
+      },
+      {
+        "character": "Narrative",
+        "text": "Les rires de tes amis semblent trop bruyants, presque dérangeants, dans ce silence oppressant de la nuit."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’un de tes amis remarque ton air préoccupé et s’approche."
+      },
+      {
+        "character": "Valentine",
+        "side": "left",
+        "source": "./assets/characters/valentine/concerned.png",
+        "text": "Eh, ça va ? On dirait que t’as vu un fantôme. T’étais parti où comme ça ?"
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/concerned.png",
+          "./assets/characters/eliott/concerned.png"
+        ],
+        "text": "(Cherche tes mots, hésite à parler) Oh… nulle part, juste… je voulais marcher un peu."
+      },
+      {
+        "character": "Franck",
+        "side": "left",
+        "source": "./assets/characters/franck/concerned.png",
+        "text": "“Marcher ? Dans cette forêt ? Tout seul ? Mec, c’est quoi ton délire ? Y’a des loups ou je sais pas quoi dans le coin.”"
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/concerned.png",
+          "./assets/characters/eliott/concerned.png"
+        ],
+        "text": "Ça va vous inquietez pas, je suis juste un peu fatigué"
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "D'accord... Bon, on est là pour s’amuser, non ?! (dit-elle en sortant des chips et quelques bouteilles.)"
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Et si on faisait un jeu ? Genre un cache-cache, histoire de vraiment profiter de l’ambiance de la forêt.”"
+      },
+      {
+        "character": "Narrative",
+        "text": "Tous les regards se tournent vers elle, un peu surpris au début, puis des sourires commencent à se dessiner. Certains se lèvent déjà, impatients."
+      }
+    ],
+    "question": "...",
+    "choices": [
+      { "choice": "Accepter avec enthousiasme", "nextId": 4 },
+      { "choice": "Accepter avec reticence", "nextId": 5 }
+    ]
+  },
+  {
     "id": 7,
+    "commentaires": "CHOIX DE L'ID 3, ON CONTINUE L'EXPLORATION, MAIS ON VOIS QUELQUUN ",
+
     "dialogues": [
       {
         "character": "Narrative",
@@ -290,6 +728,8 @@
   },
   {
     "id": 8,
+    "commentaires": "CHOIX DE L'ID 7, ON SE CACHE DERRIERE L'ARBRE PUIS ON RENTRE",
+
     "dialogues": [
       {
         "character": "Narrative",
@@ -347,61 +787,10 @@
       { "choice": "Garder le silence.", "nextId": 13 }
     ]
   },
-  {
-    "id": 12,
-    "dialogues": [
-      {
-        "character": "mainCharacter",
-        "side": "left",
-        "source": [
-          "./assets/characters/rose/concerned.png",
-          "./assets/characters/eliott/concerned.png"
-        ],
-        "text": "Tu prends une grande inspiration. “Je… Je crois que j’ai vu quelqu’un dans la forêt. Il était grand, habillé en noir… Il s’est arrêté juste devant moi.”"
-      },
-
-      {
-        "character": "Eliott",
-        "side": "right",
-        "source": "./assets/characters/eliott/concerned.png",
-        "text": "Quoi ?! C’est une blague, hein ? (s’exclame Eliott, se redressant brusquement.)"
-      },
-      {
-        "character": "Juliette",
-        "side": "right",
-        "source": "./assets/characters/juliette/concerned.png",
-        "text": "Tu penses que c’était un campeur ? Ou quelqu’un qui nous suivait ?"
-      },
-      {
-        "character": "Narrative",
-        "text": "Après ton récit, l’ambiance autour du campement est clairement tendue. Eliott tente de détendre tout le monde en plaisantant, mais ses blagues tombent à plat. Valentine reste assise près du feu, ses bras entourant ses genoux, l’air soucieuse. Juliette, elle, refuse de se laisser gagner par l’angoisse. "
-      },
-      {
-        "character": "Juliette",
-        "side": "right",
-        "source": "./assets/characters/juliette/normal.png",
-        "text": "Bon, on est là pour s’amuser, pas pour flipper ! (dit-elle en sortant des chips et quelques bouteilles.)"
-      },
-      {
-        "character": "Juliette",
-        "side": "right",
-        "source": "./assets/characters/juliette/normal.png",
-        "text": "Autant profiter de ce feu et se changer les idées."
-      },
-      {
-        "character": "Narrative",
-        "text": "Tout le monde s’accorde à rester proche du camp. Les conversations deviennent plus légères, mais un certain malaise flotte toujours dans l’air. "
-      }
-    ],
-    "question": "En rentrant au camp tu décides de:",
-    "choices": [
-      { "choice": "Expliquer ce que tu as vu.", "nextId": 12 },
-      { "choice": "Garder le silence.", "nextId": 13 }
-    ]
-  },
 
   {
     "id": 9,
+    "commentaires": "CHOIX DE L'ID 7, ON SE CACHE DANS UN BUISSON PUIS ON RENTRE",
     "dialogues": [
       {
         "character": "Narrative",
@@ -463,12 +852,15 @@
     ],
     "question": "En rentrant au camp tu décides de:",
     "choices": [
-      { "choice": "Raconter ce que tu as vu.", "nextId": 14 },
-      { "choice": "Ne rien dire.", "nextId": 15 }
+      { "choice": "Raconter ce que tu as vu.", "nextId": 12 },
+      { "choice": "Ne rien dire.", "nextId": 13 }
     ]
   },
+
   {
     "id": 10,
+    "commentaires": "CHOIX DE L'ID 7, ON RESTE IMMOBILE PUIS ON RENTRE",
+
     "dialogues": [
       {
         "character": "Narrative",
@@ -513,12 +905,15 @@
     ],
     "question": "En rentrant au camp tu décides de:",
     "choices": [
-      { "choice": "Raconter ce que tu as vu.", "nextId": 14 },
-      { "choice": "Ne rien dire.", "nextId": 15 }
+      { "choice": "Raconter ce que tu as vu.", "nextId": 12 },
+      { "choice": "Ne rien dire.", "nextId": 13 }
     ]
   },
+
   {
     "id": 11,
+    "commentaires": "CHOIX DE L'ID 7, ON GRIMPE DANS L'ARBRE PUIS ENSUITE ON RENTRE",
+
     "dialogues": [
       {
         "character": "Narrative",
@@ -579,8 +974,946 @@
     ],
     "question": "En rentrant au camp tu décides de:",
     "choices": [
-      { "choice": "Raconter ce que tu as vu.", "nextId": 16 },
-      { "choice": "Ne rien dire.", "nextId": 17 }
+      { "choice": "Raconter ce que tu as vu.", "nextId": 12 },
+      { "choice": "Ne rien dire.", "nextId": 13 }
+    ]
+  },
+  {
+    "id": 12,
+    "commentaires": "APRES S'ETRE CACHER PENDANT L'EXPLO ON RACONTE CE QUON A VU PUIS JULIETTE LANCE LE CACHE CACHE + RETOUR AU CHOIX DE REPONSE ENTHOUSIASTE OU RETICENTE ",
+
+    "dialogues": [
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/concerned.png",
+          "./assets/characters/eliott/concerned.png"
+        ],
+        "text": "Tu prends une grande inspiration. “Je… Je crois que j’ai vu quelqu’un dans la forêt. Il était grand, habillé en noir… Il s’est arrêté juste devant moi.”"
+      },
+
+      {
+        "character": "Valentine",
+        "side": "right",
+        "source": "./assets/characters/valentine/concerned.png",
+        "text": "Quoi ?! C’est une blague, hein ? (s’exclame Valentine, se redressant brusquement.)"
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/concerned.png",
+        "text": "Tu penses que c’était un campeur ? Ou quelqu’un qui nous suivait ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Après ton récit, l’ambiance autour du campement est clairement tendue. Eliott tente de détendre tout le monde en plaisantant, mais ses blagues tombent à plat. Valentine reste assise près du feu, ses bras entourant ses genoux, l’air soucieuse. Juliette, elle, refuse de se laisser gagner par l’angoisse. "
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Bon, on est là pour s’amuser, pas pour flipper ! (dit-elle en sortant des chips et quelques bouteilles.)"
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Autant profiter de ce feu et se changer les idées."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tout le monde s’accorde à rester proche du camp. Les conversations deviennent plus légères, mais un certain malaise flotte toujours dans l’air. "
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Bon, on est là pour s’amuser, non ?! (dit-elle en sortant des chips et quelques bouteilles.)"
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Et si on faisait un jeu ? Genre un cache-cache, histoire de vraiment profiter de l’ambiance de la forêt.”"
+      },
+      {
+        "character": "Narrative",
+        "text": "Tous les regards se tournent vers elle, un peu surpris au début, puis des sourires commencent à se dessiner. Certains se lèvent déjà, impatients."
+      }
+    ],
+    "question": "...",
+    "choices": [
+      { "choice": "Accepter avec enthousiasme", "nextId": 4 },
+      { "choice": "Accepter avec reticence", "nextId": 5 }
+    ]
+  },
+  {
+    "id": 13,
+    "commentaires": "APRES S'ETRE CACHER PENDANT L'EXPLO ON NE RACONTE PAS CE QUON A VU PUIS JULIETTE LANCE LE CACHE CACHE + RETOUR AU CHOIX DE REPONSE ENTHOUSIASTE OU RETICENTE ",
+
+    "dialogues": [
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/neutral.png"
+        ],
+        "text": "(Tu forces un sourire.) Rien d’inhabituel, mais je crois qu’on va manquer de bois si on reste ici longtemps."
+      },
+
+      {
+        "character": "Valentine",
+        "side": "right",
+        "source": "./assets/characters/eliott/neutral.png",
+        "text": "(Valentine rit légèrement) Alors demain, on part en mission bois ? On fera une expédition, c’est plus fun à plusieurs."
+      },
+      {
+        "character": "Narrative",
+        "text": "Juliette hoche la tête, mais tu sens son regard insistant, comme si elle pressentait que tu ne disais pas tout. "
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu t’installes près du camp, mais la peur persiste. Tu ne peux t’empêcher de regarder vers les arbres, là où tu as vu cet homme. "
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Bon, on est là pour s’amuser, non ?! (dit-elle en sortant des chips et quelques bouteilles.)"
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/normal.png",
+        "text": "Et si on faisait un jeu ? Genre un cache-cache, histoire de vraiment profiter de l’ambiance de la forêt.”"
+      },
+      {
+        "character": "Narrative",
+        "text": "Tous les regards se tournent vers elle, un peu surpris au début, puis des sourires commencent à se dessiner. Certains se lèvent déjà, impatients."
+      }
+    ],
+    "question": "...",
+    "choices": [
+      { "choice": "Accepter avec enthousiasme", "nextId": 4 },
+      { "choice": "Accepter avec reticence", "nextId": 5 }
+    ]
+  },
+
+  {
+    "id": 16,
+    "commentaires": "ON SE CACHE DANS L'ARMOIRE PUIS ON SORT ET ON VOIS JULIETTE AU LOINS ",
+
+    "dialogues": [
+      {
+        "background": "",
+        "character": "Narrative",
+        "text": "Tu te glisses précipitamment dans la vieille armoire et refermes doucement la porte sur toi. L’odeur de bois humide et de poussière t’envahit aussitôt. L’intérieur est étroit, quelques vieux vêtements pendent encore, rêches et moisis. Tu retiens ton souffle."
+      },
+      {
+        "character": "Narrative",
+        "text": "À travers une fissure dans le bois, tu vois la silhouette entrer lentement dans la cabane. Mais maintenant qu’elle est plus proche, ton cœur s’emballe : ce n’est pas Juliette."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’individu est grand, vêtu de noir. Son visage est masqué par l’ombre de sa capuche. Il avance lentement, méthodiquement, comme s’il savait que quelqu’un était ici."
+      },
+      {
+        "character": "Narrative",
+        "text": "Il s’arrête au centre de la pièce, tourne la tête à gauche, à droite. Puis, il s’approche de la table. Il semble écouter."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu pries pour qu’il ne vérifie pas l’armoire."
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais alors, un craquement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu te fige."
+      },
+      {
+        "character": "Narrative",
+        "text": "Après un instant qui semble durer une éternité, il recule. Il inspecte rapidement sous la table, puis se dirige vers la porte et disparaît dans la nuit."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu attends encore un long moment avant d’oser bouger. Ton cœur bat à tout rompre. Il savait que quelqu’un était là…"
+      },
+      {
+        "character": "Narrative",
+        "text": "Le silence pesant retombe sur la cabane. L'ombre que tu as vue a disparu."
+      },
+      {
+        "character": "Narrative",
+        "text": "Ton cœur bat encore à un rythme effréné. Tu essaies de reprendre ton souffle."
+      },
+      {
+        "character": "Narrative",
+        "text": "Lentement, tu te redresses. Tes muscles sont tendus, chaque mouvement semble résonner dans la pièce."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’odeur de bois pourri et de poussière te prend à la gorge. Tu scrutes les alentours, ton regard s'arrêtant sur les murs délabrés."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un bruissement soudain brise le silence. Cette fois, il vient de l’extérieur."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu te figes. Tes yeux se tournent vers la fenêtre cassée, mais la nuit est trop sombre pour y distinguer quoi que ce soit."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "Bon, les gars, vous êtes où ? J’ai compté jusqu’à trente, c’est bon !"
+      },
+      {
+        "character": "Narrative",
+        "text": "Un frisson te parcourt l’échine. C’est Juliette. Elle avance lentement entre les arbres, sa lampe torche projetant des ombres étranges sur le sol."
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais si elle est là… alors, qui était la silhouette que tu as vue tout à l’heure ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Ton esprit hésite, tiraillé entre la peur et la raison. Tu dois prendre une décision."
+      }
+    ],
+    "question": "Que fais-tu ?",
+    "choices": [
+      {
+        "choice": "Tu l’appelles discrètement et lui racontes ce que tu viens de voir.",
+        "nextId": 19
+      },
+      {
+        "choice": "Tu restes caché, incapable de bouger, paralysé par la peur.",
+        "nextId": 20
+      },
+      {
+        "choice": "Tu ressors calmement et fais comme si de rien n’était.",
+        "nextId": 21
+      }
+    ]
+  },
+
+  {
+    "id": 17,
+    "commentaires": "ON SE CACHE SOUS LA TABLE EN BOIS PUIS ON SORT ET ON VOIS JULIETTE AU LOINS ",
+
+    "dialogues": [
+      {
+        "background": "",
+        "character": "Narrative",
+        "text": "Tu plonges sous la vieille table en bois, rabats une nappe trouée devant toi et retiens ta respiration. L’endroit est exigu, poussiéreux. Tu entends ton propre cœur battre dans ta poitrine."
+      },
+      {
+        "character": "Narrative",
+        "text": "La silhouette entre dans la cabane. Ses pas sont lourds sur le plancher vermoulu. À travers un trou dans le tissu, tu l’aperçois enfin de plus près."
+      },
+      {
+        "character": "Narrative",
+        "text": "Ce n’est pas Juliette. Ce n’est même pas un de tes amis."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’individu est grand, vêtu d’une veste sombre, le visage dissimulé dans l’ombre. Il s’arrête au milieu de la pièce. Écoute."
+      },
+      {
+        "character": "Narrative",
+        "text": "Puis, il fait un pas."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un autre."
+      },
+      {
+        "character": "Narrative",
+        "text": "Il s’approche lentement de la table."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu retiens ton souffle alors qu’il s’accroupit légèrement. Son visage n’est qu’à quelques centimètres du bord du tissu."
+      },
+      {
+        "character": "Narrative",
+        "text": "Soudain, un bruit dehors."
+      },
+      {
+        "character": "Narrative",
+        "text": "Il se redresse immédiatement, tourne la tête vers la porte, hésite une seconde, puis sort d’un pas rapide."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu restes figé encore un moment avant d’oser ramper hors de ta cachette."
+      },
+      {
+        "character": "Narrative",
+        "text": "Ce n’était pas Juliette… et il cherchait quelque chose."
+      }
+    ],
+    "question": "...",
+    "choices": [
+      {
+        "choice": "Tu l’appelles discrètement et lui racontes ce que tu viens de voir.",
+        "nextId": 19
+      },
+      {
+        "choice": "Tu restes caché, incapable de bouger, paralysé par la peur.",
+        "nextId": 20
+      },
+      {
+        "choice": "Tu ressors calmement et fais comme si de rien n’était.",
+        "nextId": 21
+      }
+    ]
+  },
+
+  {
+    "id": 18,
+    "commentaires": "ON SE CACHE DERRIERE LA PORTE PUIS ON SORT ET ON VOIS JULIETTE AU LOINS ",
+
+    "dialogues": [
+      {
+        "character": "Narrative",
+        "text": "Tu te presses contre le mur, juste derrière la porte entrouverte. L’obscurité t’enveloppe, mais tu es dangereusement exposé si quelqu’un referme la porte."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un courant d’air froid traverse la pièce quand la silhouette entre."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu retiens ton souffle."
+      },
+      {
+        "character": "Narrative",
+        "text": "Il est là."
+      },
+      {
+        "character": "Narrative",
+        "text": "Son pas est lent, mesuré. Tu entends son souffle calme et régulier. Il avance vers le centre de la pièce, s’arrête un instant."
+      },
+      {
+        "character": "Narrative",
+        "text": "Puis, il se retourne."
+      },
+      {
+        "character": "Narrative",
+        "text": "Il pose une main sur la porte."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu sens son ombre tout près de toi."
+      },
+      {
+        "character": "Narrative",
+        "text": "Puis, lentement, il tire la porte."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu te plaques un peu plus contre le mur, ton cœur au bord de l’explosion."
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais au lieu de la fermer complètement, il s’arrête."
+      },
+      {
+        "character": "Narrative",
+        "text": "Il hésite."
+      },
+      {
+        "character": "Narrative",
+        "text": "Puis, sans raison apparente, il lâche prise et quitte la cabane."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu attends encore quelques secondes, immobile, avant d’oser respirer à nouveau."
+      },
+      {
+        "character": "Narrative",
+        "text": "Il savait que quelqu’un était ici…"
+      }
+    ],
+    "question": "...",
+    "choices": [
+      {
+        "choice": "Tu l’appelles discrètement et lui racontes ce que tu viens de voir.",
+        "nextId": 19
+      },
+      {
+        "choice": "Tu restes caché, incapable de bouger, paralysé par la peur.",
+        "nextId": 20
+      },
+      {
+        "choice": "Tu ressors calmement et fais comme si de rien n’était.",
+        "nextId": 21
+      }
+    ]
+  },
+
+  {
+    "id": 19,
+    "commentaires": "APRES S'ETRE CACHER DANS LA CABANE ON APPELLE JULIETTE DISCRETEMENT POUR LUI RACONTER CE QU'ON VIENS DE VOIR ",
+
+    "dialogues": [
+      {
+        "character": "Narrative",
+        "text": "L'hésitation te tord l'estomac, mais tu prends une inspiration profonde."
+      },
+      {
+        "character": "Narrative",
+        "text": "Si c’est bien Juliette, tu n’as aucune raison de rester caché."
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/concerned.png",
+          "./assets/characters/eliott/concerned.png"
+        ],
+        "text": "Juliette ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Ta voix brise le silence de la nuit. Aussitôt, le faisceau de sa lampe se braque vers la cabane."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/surprised.png",
+        "text": "Oh putain ! Tu m’as fait peur !"
+      },
+      {
+        "character": "Narrative",
+        "text": "Elle s’avance vers toi, visiblement soulagée de te voir."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "Pourquoi tu t’étais planqué là-dedans ?"
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/neutral.png"
+        ],
+        "text": "Euh… je cherchais une cachette, et je suis tombé sur cette cabane. Je me suis dit que c'était parfait."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/happy.png",
+        "text": "Mouais… sauf que t’as perdu, parce que je t’ai trouvé !"
+      },
+      {
+        "character": "Narrative",
+        "text": "Elle éclate de rire, visiblement détendue. Mais un détail te chiffonne."
+      },
+      {
+        "character": "Narrative",
+        "text": "Ses yeux balayent nerveusement les alentours. Elle n’est pas aussi à l’aise qu’elle le prétend."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "Les autres sont bien cachés. J’ai appelé plusieurs fois, mais personne n’a répondu."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un frisson grimpe le long de ta nuque."
+      },
+      {
+        "character": "Narrative",
+        "text": "Le jeu de cache-cache a pris une tournure étrange."
+      },
+      {
+        "character": "Narrative",
+        "text": "Pourquoi est-ce que personne ne répond ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Et surtout…"
+      },
+      {
+        "character": "Narrative",
+        "text": "Pourquoi as-tu l’impression que vous n’êtes pas seuls ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Un bruit sourd résonne dans la forêt. Un craquement de branches."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/surprised.png",
+        "text": "T’as entendu ça ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Son ton est plus tendu cette fois. Elle aussi l’a entendu."
+      },
+      {
+        "character": "Narrative",
+        "text": "Quelqu’un , ou quelque chose.. est là."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un autre choix s’offre à vous."
+      }
+    ],
+    "question": "...",
+    "choices": [
+      {
+        "choice": "Appeler les autres à voix haute pour qu’ils reviennent au camp.",
+        "nextId": 22
+      },
+      {
+        "choice": "Se cacher à nouveau et observer ce qui approche.",
+        "nextId": 23
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "commentaires": "APRES S'ETRE CACHER DANS LA CABANE ON RESTE CACHE PAR PEUR QUE LHOMME REVIENNE ",
+
+    "dialogues": [
+      {
+        "character": "Narrative",
+        "text": "Tu restes parfaitement immobile. Chaque muscle de ton corps est tendu, prêt à réagir au moindre bruit."
+      },
+      {
+        "character": "Narrative",
+        "text": "Ta respiration est saccadée. Tu essaies de la contrôler, mais ton cœur cogne contre ta poitrine."
+      },
+      {
+        "character": "Narrative",
+        "text": "Le vent souffle doucement entre les arbres. Les feuilles bruissent, masquant par instants les bruits alentours."
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais entre ces sons naturels... il y a autre chose."
+      },
+      {
+        "character": "Narrative",
+        "text": "Des pas. Lourds. Lents. Mesurés."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’homme est encore là."
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/neutral.png"
+        ],
+        "text": "**Il ne m’a pas vu... mais s’il se retourne ? S’il entend ma respiration ?**"
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu fermes les yeux un instant. L’angoisse monte, insoutenable."
+      },
+      {
+        "character": "Narrative",
+        "text": "Les pas s’arrêtent."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un silence pesant s’abat sur la forêt."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu n’oses plus bouger."
+      },
+      {
+        "character": "Narrative",
+        "text": "Puis... Un raclement. Comme si quelque chose traînait sur le sol."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un souffle rauque, presque animal."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’homme est si proche."
+      },
+      {
+        "character": "Narrative",
+        "text": "Puis soudain, un bruit plus lointain. Des feuilles qui craquent."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "Eh les gars ! Sérieux, ça fait plus de dix minutes ! Vous vous cachez trop bien ou quoi ?!"
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu entends les pas de Juliette s’approcher."
+      },
+      {
+        "character": "Narrative",
+        "text": "Les pas de l’homme, eux, s’arrêtent brusquement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Puis un craquement plus loin. Il s’éloigne, lentement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu respires plus librement, mais l’angoisse reste là. Est-il parti pour de bon ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Juliette continue d’avancer, scrutant les alentours."
+      },
+      {
+        "character": "Narrative",
+        "text": "Son regard se pose sur toi."
+      },
+      {
+        "character": "Narrative",
+        "text": "Elle fronce les sourcils, intriguée."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "Hé... Qu'est-ce que tu fiches là, t’es tout crispé ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu hésites un instant, mais l’image de cet homme rôdant dans la forêt est encore trop fraîche."
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/neutral.png"
+        ],
+        "text": "Juliette, j’ai vu quelqu’un. Un homme... Il est entré dans la cabane. Il me cherchait, j’en suis sûr."
+      },
+      {
+        "character": "Narrative",
+        "text": "Le visage de Juliette change immédiatement. Son sourire moqueur s’efface."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "Attends, quoi ? T'es sérieux ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Elle regarde autour d’elle, comme si l’homme pouvait surgir à tout moment."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’angoisse monte à nouveau. Il faut faire un choix, et vite."
+      }
+    ],
+    "question": "...",
+    "choices": [
+      {
+        "choice": "Appeler les autres à voix haute pour qu’ils reviennent au camp.",
+        "nextId": 22
+      },
+      {
+        "choice": "Se cacher et observer ce qui approche.",
+        "nextId": 23
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "commentaires": "APRES S'ETRE CACHER DANS LA CABANE ON VAS VOIR JULIETTE MAIS ON NE LUI DIS PAS CE QUON VIENS DE VIVRE ",
+
+    "dialogues": [
+      {
+        "character": "Narrative",
+        "text": "Tu hésites un instant, mais l'angoisse qui serre ton estomac te pousse à agir sans attendre."
+      },
+      {
+        "character": "Narrative",
+        "text": "Au lieu de tout lui raconter, tu te redresses doucement, glissant hors de ta cachette avec précaution."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu jettes un dernier coup d'œil vers la cabane, espérant que l’homme ne reviendra pas."
+      },
+      {
+        "character": "Narrative",
+        "text": "Juliette continue d’avancer, et tu décides de t'approcher d'elle sans révéler ce que tu viens de vivre."
+      },
+      {
+        "character": "Narrative",
+        "text": "Il est hors de question de parler de cet homme, de cette peur qui t’a envahi. Pas maintenant."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu es encore secoué, mais tu gardes le silence, préférant affronter ce mystère à ta façon."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/concerned.png",
+        "text": "Alors, t’étais où ? C’est quoi ton délire là, tu m’as l’air tout bizarre."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu réponds d’une voix calme, essayant de dissimuler la tension qui te serre encore la gorge."
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/concerned.png",
+          "./assets/characters/eliott/concerned.png"
+        ],
+        "text": "J’étais... je suis juste allé(e) me cacher. Je t’ai entendue appeler."
+      },
+      {
+        "character": "Narrative",
+        "text": "Juliette te regarde un moment, mais quelque chose dans ton attitude semble la perturber."
+      },
+      {
+        "character": "Narrative",
+        "text": "Elle ne peut pas vraiment savoir ce qui s’est passé, pas tout de suite."
+      },
+      {
+        "character": "Narrative",
+        "text": "Elle fronce les sourcils, un air de doute dans ses yeux, mais finit par hausser les épaules."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/neutral.png",
+        "text": "Bon... Si tu le dis. Mais t’es sûr que tout va bien ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu hoches la tête rapidement, ne voulant pas trop en dire."
+      },
+      {
+        "character": "Narrative",
+        "text": "Son regard se durcit un instant, mais elle finit par tourner les talons et se remettre en marche."
+      },
+      {
+        "character": "Narrative",
+        "text": "Le silence s’installe de nouveau, pesant, et tu essaies de te concentrer sur autre chose."
+      },
+      {
+        "character": "Narrative",
+        "text": "Pourtant, chaque ombre qui bouge, chaque bruit te rappelle cet homme et ce qu’il pourrait encore faire."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu te forces à respirer profondément, décidant qu’il est peut-être temps d’avancer et de sortir de ce silence."
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais tout à coup, tu entends des bruits, des pas qui se rapprochent lentement. Un frisson te parcourt l'échine."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu te figes, tendant l'oreille. Quelqu’un ou quelque chose se rapproche, et la tension monte à nouveau."
+      }
+    ],
+    "question": "...",
+    "choices": [
+      {
+        "choice": "Appeler les autres à voix haute pour qu’ils reviennent au camp.",
+        "nextId": 22
+      },
+      {
+        "choice": "Se cacher à nouveau et observer ce qui approche.",
+        "nextId": 23
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "commentaires": "APRES AVOIR RETROUVE JULIETTE ON DECIDE DAPPELER LES AUTRES EN CRIANT POUR RENTRER AU CAMP",
+
+    "dialogues": [
+      {
+        "character": "Narrative",
+        "text": "Ton instinct te dit de ne pas bouger, de rester caché(e). Le bruit des branches cassées se rapproche, mais cette fois, tu n’oses pas faire de bruit."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu restes là, immobile, espérant que cette silhouette ne te remarque pas. Le souffle court, tu t’accroupis un peu plus derrière ton abri."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’ombre de la silhouette grandit peu à peu dans l’obscurité. Tu peux entendre des bruits de pas se rapprocher. Chaque mouvement dans la forêt semble amplifié."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu sais qu’il faut rester calme, mais ton cœur bat si fort dans ta poitrine que tu as l’impression qu’il va te trahir."
+      },
+      {
+        "character": "Narrative",
+        "text": "Et puis soudain, le bruit s'arrête net. Tu attends, retenant ta respiration, les yeux fixés sur l’endroit où tu as vu la silhouette."
+      },
+      {
+        "character": "Narrative",
+        "text": "Après quelques instants interminables, tu entends une voix familière."
+      },
+      {
+        "character": "secondCharacter",
+        "side": "right",
+        "source": [
+          "./assets/characters/eliott/neutral.png",
+          "./assets/characters/rose/neutral.png"
+        ],
+        "text": "C’est moi, vous êtes là ? Qu’est-ce qui se passe ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "C'est Valentine. Un soupir de soulagement t’échappe. Tu n'avais aucune idée de qui ça pourrait être, mais ça ne pouvait pas être un pire moment pour rester caché."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu sortis prudemment de ta cachette, bien que tes jambes tremblent encore légèrement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tous ensemble, vous vous dirigez vers le camp, mais une inquiétude grandissante t’envahit à chaque pas."
+      },
+      {
+        "character": "Narrative",
+        "text": "En arrivant au camp, vous remarquez que Franck est toujours introuvable. Il n’a pas répondu à l’appel, et il semble avoir disparu."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu regardes autour de toi, mais il n’y a aucune trace de lui. Même son sac, qui d’habitude est toujours bien en vue, n’est plus là."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un frisson d'inquiétude te parcourt. Pourquoi Franck n'est-il pas revenu ?"
+      }
+    ],
+    "question": "...",
+    "choices": [
+      {
+        "choice": "Attendre Franck ici, il reviendra sûrement.",
+        "nextId": 27
+      },
+      {
+        "choice": "Envoyer quelqu’un à sa recherche dans la forêt.",
+        "nextId": 28
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "commentaires": "APRES AVOIR RETROUVE JULIETTE ON DECIDE DE SE CACHER ET DE VOIR CE QUI APPROCHE",
+
+    "dialogues": [
+      {
+        "character": "Narrative",
+        "text": "Ton instinct te dit de ne pas bouger, de rester caché(e). Le bruit des branches cassées se rapproche, mais cette fois, tu n’oses pas faire de bruit."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu restes là, immobile, espérant que cette silhouette ne te remarque pas. Le souffle court, tu t’accroupis un peu plus derrière ton abri."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’ombre de la silhouette grandit peu à peu dans l’obscurité. Tu peux entendre des bruits de pas se rapprocher. Chaque mouvement dans la forêt semble amplifié."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu sais qu’il faut rester calme, mais ton cœur bat si fort dans ta poitrine que tu as l’impression qu’il va te trahir."
+      },
+      {
+        "character": "Narrative",
+        "text": "Et puis soudain, le bruit s'arrête net. Tu attends, retenant ta respiration, les yeux fixés sur l’endroit où tu as vu la silhouette."
+      },
+      {
+        "character": "Narrative",
+        "text": "Après quelques instants interminables, tu entends une voix familière."
+      },
+      {
+        "character": "secondCharacter",
+        "side": "right",
+        "source": [
+          "./assets/characters/eliott/neutral.png",
+          "./assets/characters/rose/neutral.png"
+        ],
+        "text": "C’est moi, vous êtes là ? Qu’est-ce qui se passe ?"
+      },
+      {
+        "character": "Narrative",
+        "text": "C'est Valentine. Un soupir de soulagement t’échappe. Tu n'avais aucune idée de qui ça pourrait être, mais ça ne pouvait pas être un pire moment pour rester caché."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu sortis prudemment de ta cachette, bien que tes jambes tremblent encore légèrement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tous ensemble, vous vous dirigez vers le camp, mais une inquiétude grandissante t’envahit à chaque pas."
+      },
+      {
+        "character": "Narrative",
+        "text": "En arrivant au camp, vous remarquez que Franck est toujours introuvable. Il n’a pas répondu à l’appel, et il semble avoir disparu."
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu regardes autour de toi, mais il n’y a aucune trace de lui. Même son sac, qui d’habitude est toujours bien en vue, n’est plus là."
+      },
+      {
+        "character": "Narrative",
+        "text": "Un frisson d'inquiétude te parcourt. Pourquoi Franck n'est-il pas revenu ?"
+      }
+    ],
+    "question": "...",
+    "choices": [
+      {
+        "choice": "Attendre Franck ici, il reviendra sûrement.",
+        "nextId": 28
+      },
+      {
+        "choice": "Envoyer quelqu’un à sa recherche dans la forêt.",
+        "nextId": 29
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "commentaires": "ON ATTEND FRANCK AU CAMP IL REVIENDRAS SURMEENT DANS LA NUIT ",
+    "dialogues": [
+      {
+        "character": "Narrative",
+        "text": ""
+      }
+    ],
+    "question": "...",
+    "choices": [
+      {
+        "choice": "   ",
+        "nextId": 30
+      },
+      {
+        "choice": "   ",
+        "nextId": 31
+      }
     ]
   }
 ]

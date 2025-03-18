@@ -2,3 +2,4 @@ node_modules
 .prettierrc
 pnpm-lock.yaml
 .DS_Store
+.vscode

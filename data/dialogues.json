@@ -147,7 +147,7 @@
       {
         "character": "Valentine",
         "side": "left",
-        "source": "./assets/characters/juliette/neutral.png",
+        "source": "./assets/characters/valentine/neutral.png",
         "text": "C’est vraiment calme ici, non ? Je trouve ça… presque un peu trop calme"
       },
       {
@@ -627,7 +627,7 @@
     "dialogues": [
       {
         "character": "Narrative",
-        "text": "Plus loin, tu remarques un petit sentier presque invisible, envahi par les feuilles mortes. Ce sentier n’a rien de naturel : les branches semblent brisées volontairement pour dégager un passage. "
+        "text": "Plus loins, tu remarques un petit sentier presque invisible, envahi par les feuilles mortes. Ce sentier n’a rien de naturel : les branches semblent brisées volontairement pour dégager un passage. "
       },
       {
         "character": "Narrative",
@@ -1635,6 +1635,10 @@
       {
         "choice": "Se cacher et observer ce qui approche.",
         "nextId": 23
+      },
+      {
+        "choice": "S’avancer prudemment pour voir ce que c’est.",
+        "nextId": 24
       }
     ]
   },
@@ -1742,6 +1746,10 @@
       {
         "choice": "Se cacher à nouveau et observer ce qui approche.",
         "nextId": 23
+      },
+      {
+        "choice": "S’avancer prudemment pour voir ce que c’est.",
+        "nextId": 24
       }
     ]
   },
@@ -1822,7 +1830,7 @@
   },
   {
     "id": 23,
-    "commentaires": "APRES AVOIR RETROUVE JULIETTE ON DECIDE DE SE CACHER ET DE VOIR CE QUI APPROCHE",
+    "commentaires": "APRES AVOIR RETROUVÉ JULIETTE ON DECIDE DE SE CACHER ET DE VOIR CE QUI APPROCHE",
 
     "dialogues": [
       {

@@ -110,9 +110,9 @@ class Game {
         cursor: false,
       })
         .type(".")
-        // .pause(200)
+        .pause(200)
         .type(".")
-        // .pause(200)
+        .pause(200)
         .type(".")
         .go();
     });
@@ -209,22 +209,22 @@ class Game {
 
     setTimeout(() => {
       new TypeIt("#intro-text", {
-        speed: 5, // 50
+        speed: 50, // 50
         cursor: false,
       })
         .type("7 DÉCEMBRE 1996, 19h")
-        // .pause(2000)
+        .pause(2000)
         .empty()
         .type("La nuit tombait lentement, enveloppant la forêt d’un voile d’obscurité oppressant.")
-        // .pause(2000)
+        .pause(2000)
         .empty()
         .type(
           "Un groupe de cinq amis, excités par l’idée d’un week-end loin de tout, s’enfonçait sur un sentier étroit..",
         )
-        // .pause(2000)
+        .pause(2000)
         .empty()
         .type("Leurs lampes torches projetant des faisceaux vacillants entre les arbres imposants.")
-        // .pause(2000)
+        .pause(2000)
         .empty()
         .exec(() => {
           // Une fois l'intro terminée, passe à la page de dialogue

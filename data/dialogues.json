@@ -1905,21 +1905,220 @@
   },
   {
     "id": 28,
-    "commentaires": "ON ATTEND FRANCK AU CAMP IL REVIENDRAS SURMEENT DANS LA NUIT ",
+    "commentaires": "ON ATTEND FRANCK AU CAMP EN ESPERANT QUIL RENTRE DANS LA NUIT",
     "dialogues": [
       {
         "character": "Narrative",
-        "text": ""
+        "text": "Les personnages s’installent autour du feu, leur chaleur de groupe contrastant avec la froideur de la nuit. L’odeur du bois qui crépite dans la cheminée se mêle à celle des chocolats fondus, mais une tension invisible flotte dans l’air."
+      },
+      {
+        "character": "Narrative",
+        "text": "Ton cœur bat fort dans ta poitrine, et tout à coup, tu sens que l’atmosphère s’alourdit. Ils te regardent, certains hésitent, d’autres frissonnent. "
+      },
+      {
+        "character": "Narrative",
+        "text": "Tu choisis de tout leur raconter, d’ouvrir enfin le secret, mais dès que tu prononces les mots, leurs visages se figent."
+      },
+      {
+        "character": "Narrative",
+        "text": "Les yeux de Valentine s’agrandissent, ceux de Juliette brillent d’inquiétude, et même Rose semble perturber, bien qu’elle essaie de cacher sa peur."
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais personne n’ose vraiment réagir. Il y a ce silence gênant, ce murmure inquiétant dans l’air. Peut-être que, tout comme toi, ils essaient de comprendre ce qu’il s’est réellement passé."
+      },
+      {
+        "character": "Narrative",
+        "text": " Les rumeurs sur le « gardien de la forêt » résonnent dans leurs têtes, et ils restent là, comme figés dans une immobilité d’incertitude."
+      },
+      {
+        "character": "Narrative",
+        "text": "Finalement, après ce qui semble être une éternité, l’ambiance se relâche un peu. Le feu crépite et les premières douceurs commencent à être grignotées. Le sucre et la chaleur du chocolat brulé adoucissent un peu l’atmosphère."
+      },
+      {
+        "character": "Narrative",
+        "text": "Mais quelque chose ne va pas. Franck n’est toujours pas revenu. Une sorte de malaise s’installe parmi le groupe, un petit frisson qui court sur la peau, un sentiment que quelque chose n’est pas normal."
+      },
+      {
+        "character": "Narrative",
+        "text": "Après un moment de silence lourd, Valentine se lève doucement, se frotte les yeux. “Je vais me reposer un peu… C’est déjà bien tard”, dit-elle d’une voix qui tente de masquer l’inquiétude."
+      },
+      {
+        "character": "Narrative",
+        "text": "Les heures passent, l’obscurité se fait plus oppressante, et le vent souffle entre les arbres, faisant craquer les branches comme si la forêt elle-même voulait parler. Soudain, un cri perçant déchire la nuit, comme un écho lointain."
+      },
+      {
+        "character": "Narrative",
+        "text": " Il est bref, déchirant, empreint de douleur. Il ne provient pas du camp, et il n’est pas loin. Le silence retombe, lourd et angoissant."
+      },
+      {
+        "character": "Narrative",
+        "text": "Juliette, les yeux écarquillés de terreur, se relève brusquement. “Je… je crois que Franck… Il… il est en danger…”. Elle halète, son visage blême comme un fantôme sous la lumière de la lampe. Vous tentez de la calmer, mais son souffle court ne cesse de la trahir. "
+      },
+      {
+        "character": "Narrative",
+        "text": " Elle explique, d’une voix tremblante, que son sac à dos a été retrouvé dans la forêt, déchiré, et qu’elle a vu des taches sombres, qui ressemblaient à du sang, à côté. Le silence sur le camp devient insupportable. Les ombres dansent autour du feu, projetant des formes inquiétantes."
+      },
+      {
+        "character": "Narrative",
+        "text": "L’ambiance devient glaciale, un frisson collectif vous traverse tous. Les regards se croisent, incertains, effrayés. Juliette continue de pleurer, et vous vous approchez d’elle, tentant de la consoler, mais vos propres peurs sont bien réelles. Valentine, prise d’une impulsion soudaine, se lève brusquement."
+      },
+      {
+        "character": "Valentine",
+        "side": "left",
+        "source": "./assets/characters/valentine/concerned.png",
+        "text": "'Je vais y aller', annonce-t-elle avec une voix ferme, mais qui tremble à peine."
+      },
+
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/neutral.png"
+        ],
+        "text": "“Quoi?” La question te sort de la gorge comme un souffle rapide, un cri silencieux. Tu n’es pas sûre d’avoir bien entendu."
+      },
+      {
+        "character": "Valentine",
+        "side": "left",
+        "source": "./assets/characters/valentine/concerned.png",
+        "text": "'Oui', insiste-t-elle, “Il faut l’aider. Je vais y aller.”"
+      },
+      {
+        "character": "mainCharacter",
+        "side": "left",
+        "source": [
+          "./assets/characters/rose/neutral.png",
+          "./assets/characters/eliott/neutral.png"
+        ],
+        "text": "“Quoi ?! Mais c’est du suicide, tu ne peux pas y aller seule!” L’inquiétude t’envahit. Le ton de ta voix trahit la peur que tu essayes de réprimer."
+      },
+
+      {
+        "character": "Narrative",
+        "text": "Le groupe autour de vous semble pris au piège dans l’incertitude. Les murmures cessent. Puis, dans un élan de solidarité, Juliette essuie ses larmes et se redresse, son regard est déterminé."
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/concerned.png",
+        "text": " On doit tous y aller !  "
+      },
+      {
+        "character": "Juliette",
+        "side": "right",
+        "source": "./assets/characters/juliette/annoyed.png ",
+        "text": "  “C’est de Franck qu’on parle. On ne peut pas le laisser là-bas, seul, dans la forêt.” "
+      },
+      {
+        "character": "Narrative",
+        "text": "Les regards s’échangent. Chacun prend une profonde inspiration, et lentement, vous vous mettez tous d’accord pour partir ensemble. Vous rassemblez des lampes, des provisions, et vous prenez les talkie-walkies."
+      },
+      {
+        "character": "Narrative",
+        "text": " Le père de Juliette vous les a donnés pour une telle situation, au cas où vous seriez séparés. Deux personnes par talkie-walkie."
+      },
+      {
+        "character": "Narrative",
+        "text": "Vous vous dirigez dans le sens opposé à la cabane, un endroit encore vierge, où personne ne s’est aventuré. La forêt semble s’épaissir autour de vous à chaque pas. L’obscurité vous enveloppe comme une couverture lourde. Le vent fait frissonner les arbres, et chaque bruissement semble amplifier vos doutes."
+      },
+      {
+        "character": "Narrative",
+        "text": "En marchant dans la forêt humide, la brume s’élève à vos pieds. Vous communiquez avec le second groupe par radio, mais après vingt minutes de marche, la fatigue et l’angoisse vous gagnent. Rien. Aucune trace de Franck. Aucun indice. C’est comme si la forêt l’avait englouti. "
+      },
+      {
+        "character": "Narrative",
+        "text": "Vous commencez à vous dire qu’il serait peut-être plus sage de retourner au camp. Mais, alors que vous vous préparez à faire demi-tour, un cri déchirant résonne dans la nuit. "
+      },
+      {
+        "character": "Narrative",
+        "text": "Il est court, distant, mais chargé de souffrance. Un cri humain, un cri de douleur. Votre cœur rate un battement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Avant même de pouvoir réagir, le talkie-walkie grésille. Vous vous précipitez dessus, le son statique envahit vos oreilles. Puis une voix rauque, grave, émerge de l’appareil."
+      },
+      {
+        "character": "Narrative",
+        "text": "“Allo ?”"
+      },
+      {
+        "character": "Narrative",
+        "text": "Le monde semble s’arrêter autour de vous. Un frisson d’horreur vous traverse, car cette voix n’est pas celle que vous attendiez. Elle est étrange, presque menaçante, trop grave pour être familière. "
+      },
+      ,
+      {
+        "character": "Narrative",
+        "text": "Le silence tombe. Un lourd silence. Vous êtes figés, paralysés par l’inconnu. Le vent se fait plus fort, et une sueur froide perle sur votre front."
       }
     ],
-    "question": "...",
+    "question": "Vous décidez de :",
     "choices": [
       {
-        "choice": "   ",
+        "choice": "Répondre",
         "nextId": 30
       },
       {
-        "choice": "   ",
+        "choice": "Garder le silence ",
+        "nextId": 31
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "commentaires": "ON ENVOIE QLQ CHERCHER FRANCK",
+    "dialogues": [
+      {
+        "character": "Narrative",
+        "text": "Les regards s’échangent. Chacun prend une profonde inspiration, et lentement, vous vous mettez tous d’accord pour partir ensemble. Vous rassemblez des lampes, des provisions, et vous prenez les talkie-walkies."
+      },
+      {
+        "character": "Narrative",
+        "text": " Le père de Juliette vous les a donnés pour une telle situation, au cas où vous seriez séparés. Deux personnes par talkie-walkie."
+      },
+      {
+        "character": "Narrative",
+        "text": "Vous vous dirigez dans le sens opposé à la cabane, un endroit encore vierge, où personne ne s’est aventuré. La forêt semble s’épaissir autour de vous à chaque pas. L’obscurité vous enveloppe comme une couverture lourde. Le vent fait frissonner les arbres, et chaque bruissement semble amplifier vos doutes."
+      },
+      {
+        "character": "Narrative",
+        "text": "En marchant dans la forêt humide, la brume s’élève à vos pieds. Vous communiquez avec le second groupe par radio, mais après vingt minutes de marche, la fatigue et l’angoisse vous gagnent. Rien. Aucune trace de Franck. Aucun indice. C’est comme si la forêt l’avait englouti. "
+      },
+      {
+        "character": "Narrative",
+        "text": "Vous commencez à vous dire qu’il serait peut-être plus sage de retourner au camp. Mais, alors que vous vous préparez à faire demi-tour, un cri déchirant résonne dans la nuit. "
+      },
+      {
+        "character": "Narrative",
+        "text": "Il est court, distant, mais chargé de souffrance. Un cri humain, un cri de douleur. Votre cœur rate un battement."
+      },
+      {
+        "character": "Narrative",
+        "text": "Avant même de pouvoir réagir, le talkie-walkie grésille. Vous vous précipitez dessus, le son statique envahit vos oreilles. Puis une voix rauque, grave, émerge de l’appareil."
+      },
+      {
+        "character": "Narrative",
+        "text": "“Allo ?”"
+      },
+      {
+        "character": "Narrative",
+        "text": "Le monde semble s’arrêter autour de vous. Un frisson d’horreur vous traverse, car cette voix n’est pas celle que vous attendiez. Elle est étrange, presque menaçante, trop grave pour être familière. "
+      },
+
+      {
+        "character": "Narrative",
+        "text": "Le silence tombe. Un lourd silence. Vous êtes figés, paralysés par l’inconnu. Le vent se fait plus fort, et une sueur froide perle sur votre front."
+      }
+    ],
+    "question": "Vous décidez de :",
+    "choices": [
+      {
+        "choice": "Répondre",
+        "nextId": 30
+      },
+      {
+        "choice": "Garder le silence ",
         "nextId": 31
       }
     ]

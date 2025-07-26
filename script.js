@@ -376,6 +376,7 @@ class Game {
 
     choices.forEach((choice) => {
       const button = document.createElement("button");
+      button.classList.add("choice-btn");
       button.innerText = choice.choice;
       button.addEventListener("click", () => {
         this.currentScene = this.scenes.find((scene) => scene.id === choice.nextId);

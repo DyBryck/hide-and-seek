@@ -170,3 +170,7 @@
     animation: animateBackground 1s;
   }
 }
+
+.choice-btn:hover {
+  text-decoration: underline;
+}
